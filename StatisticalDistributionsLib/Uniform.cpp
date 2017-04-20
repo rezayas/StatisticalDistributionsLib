@@ -8,17 +8,25 @@ namespace StatisticalDistributions
 		max_ = max;
 	}
 
-	double Uniform::Sample(RNG &rng)
-	{
-		return min_ + max_ * rng.RND01();
-	}
 	double Uniform::pdf(double value)
 	{
-		return 0;
+		if (value< min_ || value > max_)
+			return 0;
+		else
+			return 1/(max_-min_);
 	}
 	double Uniform::cdf(double value)
 	{
-		return 0;
+		if (value < min_)
+			return 0;
+		else if (value > max_)
+			return 1;
+		else
+			return (max_-value) / (max_ - min_);
+	}
+	double Uniform::Sample(RNG &rng)
+	{
+		return min_ + max_ * rng.RND01();
 	}
 }
 

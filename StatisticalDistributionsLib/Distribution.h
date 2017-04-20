@@ -1,5 +1,6 @@
 #pragma once
 #include "RNG.h"
+#include <math.h>
 
 namespace StatisticalDistributions
 {
