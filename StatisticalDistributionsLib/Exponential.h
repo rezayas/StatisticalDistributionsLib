@@ -1,9 +1,9 @@
 #pragma once
-#include "Distribution.h"
+#include "StatisticalDistribution.h"
 
 namespace StatisticalDistributions
 {
-	class Exponential : public Distribution
+	class Exponential : public StatisticalDistribution
 	{
 	public:
 		Exponential(double rate);

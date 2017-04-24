@@ -4,10 +4,10 @@
 
 namespace StatisticalDistributions
 {
-	class Distribution
+	class StatisticalDistribution
 	{
 	public:
-		Distribution() {};
+		StatisticalDistribution() {};
 		virtual double pdf(double value)
 		{
 			return 0;

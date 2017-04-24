@@ -1,9 +1,9 @@
 #pragma once
-#include "Distribution.h"
+#include "StatisticalDistribution.h"
 
 namespace StatisticalDistributions
 {
-	class Uniform : public Distribution
+	class Uniform : public StatisticalDistribution
 	{
 	public:
 		Uniform(double min, double max);

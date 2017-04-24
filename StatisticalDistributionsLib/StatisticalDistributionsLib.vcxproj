@@ -130,7 +130,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Distribution.h" />
+    <ClInclude Include="StatisticalDistribution.h" />
     <ClInclude Include="Exponential.h" />
     <ClInclude Include="RNG.h" />
     <ClInclude Include="Uniform.h" />

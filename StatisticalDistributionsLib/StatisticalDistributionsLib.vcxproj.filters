@@ -21,13 +21,13 @@
     <ClInclude Include="RNG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Distribution.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Uniform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Exponential.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticalDistribution.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
