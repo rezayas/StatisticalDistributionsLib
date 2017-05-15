@@ -5,14 +5,14 @@ namespace StatisticalDistributions
 {
   class Exponential : public StatisticalDistribution {
   public:
-    Exponential(double rate);
-    virtual double pdf(double value);
-    virtual double cdf(double value);
-    virtual double Inverse(double value);
-    virtual double Sample(RNG &rng);
-    virtual double operator()(std::mt19937 &g);
+    Exponential(long double rate);
+    virtual long double pdf(long double value);
+    virtual long double cdf(long double value);
+    virtual long double Inverse(long double value);
+    virtual long double Sample(RNG &rng);
+    virtual long double operator()(std::mt19937_64 &g);
   private:
-    const double rate;
-    std::exponential_distribution<double> dist;
+    const long double rate;
+    std::exponential_distribution<long double> dist;
   };
 }

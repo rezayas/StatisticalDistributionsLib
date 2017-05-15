@@ -2,21 +2,21 @@
 
 namespace StatisticalDistributions
 {
-  Exponential::Exponential(double rate) : dist(rate), rate(rate) {}
+  Exponential::Exponential(long double rate) : dist(rate), rate(rate) {}
 
-  double Exponential::pdf(double value) {
+  long double Exponential::pdf(long double value) {
     return this->rate*exp(-this->rate*value);
   }
-  double Exponential::cdf(double value) {
+  long double Exponential::cdf(long double value) {
     return 1- exp(-this->rate*value);
   }
-  double Exponential::Inverse(double value) {
+  long double Exponential::Inverse(long double value) {
     return -log(1 - value) / this->rate;
   }
-  double Exponential::Sample(RNG &rng) {
+  long double Exponential::Sample(RNG &rng) {
     return Inverse(rng.RND01());
   }
-  double Exponential::operator()(std::mt19937 &g){
+  long double Exponential::operator()(std::mt19937_64 &g) {
     return(this->dist(g));
   }
 }

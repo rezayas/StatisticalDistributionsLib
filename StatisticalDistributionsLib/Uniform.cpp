@@ -3,15 +3,15 @@
 namespace StatisticalDistributions {
 
 
-  Uniform::Uniform(double min, double max)
+  Uniform::Uniform(long double min, long double max)
     : dist(min, max), min(min), max(max) {}  
-  double Uniform::pdf(double value) {
+  long double Uniform::pdf(long double value) {
     if (value< this->min || value > this->max)
       return 0;
     else
       return 1/(this->max-this->min);
   }
-  double Uniform::cdf(double value) {
+  long double Uniform::cdf(long double value) {
     if (value < this->min)
       return 0;
     else if (value > this->max)
@@ -19,13 +19,13 @@ namespace StatisticalDistributions {
     else
       return (this->max-value) / (this->max - this->min);
   }
-  double Uniform::Inverse(double value) {
+  long double Uniform::Inverse(long double value) {
     return(this->min + (this->max - this->min) * value);
   }
-  double Uniform::Sample(RNG &rng) {
+  long double Uniform::Sample(RNG &rng) {
     return this->min + (this->max - this->min) * rng.RND01();
   }
-  double Uniform::operator()(std::mt19937 &g) {
+  long double Uniform::operator()(std::mt19937_64 &g) {
     return(this->dist(g));
   }
 }
