@@ -22,9 +22,6 @@ namespace StatisticalDistributions {
   long double Uniform::Inverse(long double value) {
     return(this->min + (this->max - this->min) * value);
   }
-  long double Uniform::Sample(RNG &rng) {
-    return this->min + (this->max - this->min) * rng.RND01();
-  }
   long double Uniform::operator()(std::mt19937_64 &g) {
     return(this->dist(g));
   }
