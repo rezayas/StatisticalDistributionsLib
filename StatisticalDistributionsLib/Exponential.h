@@ -3,7 +3,7 @@
 
 namespace StatisticalDistributions
 {
-  class Exponential : public StatisticalDistribution {
+  class Exponential : public StatisticalDistribution<long double> {
   public:
     Exponential(long double rate);
     virtual long double pdf(long double value);

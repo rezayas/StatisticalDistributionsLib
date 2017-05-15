@@ -2,7 +2,7 @@
 #include "StatisticalDistribution.h"
 
 namespace StatisticalDistributions {
-  class Uniform : public StatisticalDistribution {
+  class Uniform : public StatisticalDistribution<long double> {
   public:
     Uniform(long double min, long double max);
     virtual long double pdf(long double value);
