@@ -26,7 +26,7 @@ namespace StatisticalDistributions
 	}
 	double Uniform::Sample(RNG &rng)
 	{
-		return min_ + max_ * rng.RND01();
+		return min_ + (max_ - min_) * rng.RND01();
 	}
 }
 
