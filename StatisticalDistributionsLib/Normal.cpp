@@ -11,7 +11,7 @@ namespace StatisticalDistributions
     : dist(mu, sigma), mu(mu), sigma(sigma) {}
 
   long double Normal::pdf(long double value) {
-    static const long double irt2pi = 1 / sqrt(8 * atan(1));
+    static const long double irt2pi = 1 / sqrt(8 * atan(1.0L));
     return(irt2pi * exp(- SQUARE((value - mu) / (2 * sigma))) / sigma);
   }
   long double Normal::cdf(long double value) {
