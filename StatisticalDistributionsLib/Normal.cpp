@@ -1,5 +1,4 @@
 #include "Normal.h"
-#include <cmath>
 #include <boost/math/special_functions/erf.hpp>
 #define SQUARE(x) ((x)*(x))
 
