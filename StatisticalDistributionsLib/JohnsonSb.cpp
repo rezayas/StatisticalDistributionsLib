@@ -12,18 +12,28 @@ namespace StatisticalDistributions
 
   long double JohnsonSb::pdf(long double value) {
     static const long double irt2pi = 1 / sqrt(8 * atan(1.0L));
-    return(delta * irt2pi / lambda / sqrt(1 + SQUARE((value - xi)/lambda))
-	   * exp(-SQUARE(gamma + delta * asinh((value - xi) / lambda))/2));
+    long double z = (value - xi) / lambda;
+    if(z < 0 || z > 1)
+      return(0);
+    return(delta * irt2pi / lambda / z / (1 - z)
+	   * exp(-SQUARE(gamma + delta * log(z / (1-z)))/2));
   }
   long double JohnsonSb::cdf(long double value) {
-    return((erf((gamma + delta * asinh((value - xi)/lambda))/sqrt(2))
+    long double z = (value - xi) / lambda;
+    if(z < 0)
+      return(0);
+    if(z > 1)
+      return(1);
+    return((erf((gamma + delta * log(z / (1-z)))/sqrt(2))
 	    + 1) / 2);
   }
   long double JohnsonSb::Inverse(long double value) {
-    return(sinh((boost::math::erf_inv(2 * value - 1)*sqrt(2) - gamma)/delta)
-	   * lambda + xi);
+    long double y =
+      exp((boost::math::erf_inv(2 * value - 1)*sqrt(2) - gamma)/delta);
+    return(y / (y + 1) * lambda + xi);
   }
   long double JohnsonSb::operator()(std::mt19937_64 &g) {
-    return(sinh(this->dist(g)) * lambda + xi);
+    long double y = exp(dist(g));
+    return(y / (y+1) * lambda + xi);
   }
 }

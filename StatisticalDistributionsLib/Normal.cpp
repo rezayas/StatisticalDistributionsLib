@@ -17,7 +17,7 @@ namespace StatisticalDistributions
     return((erf((value - mu) / (sigma * sqrt2)) + 1) / 2);
   }
   long double Normal::Inverse(long double value) {
-    return(mu + sigma * sqrt2 * boost::math::erf_inv(value));
+    return(mu + sigma * sqrt2 * boost::math::erf_inv(2 * value - 1));
   }
   long double Normal::operator()(std::mt19937_64 &g) {
     return(this->dist(g));

@@ -5,7 +5,7 @@
 namespace StatisticalDistributions {
   using namespace std;
   template<size_t N>
-  class Dirichlet : public StatisticalDistribution<array<long double, N>> {
+  class Dirichlet : public StatisticalDistribution<array<long double, N> > {
   public:
     Dirichlet(array<long double, N> alphas);
     virtual long double pdf(array<long double, N> x);

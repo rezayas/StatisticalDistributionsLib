@@ -12,7 +12,7 @@ namespace StatisticalDistributions
 
   long double JohnsonSu::pdf(long double value) {
     static const long double irt2pi = 1 / sqrt(8 * atan(1.0L));
-    return(delta * irt2pi / lambda / sqrt(1 + SQUARE((value - sigma)/lambda))
+    return(delta * irt2pi / lambda / sqrt(1 + SQUARE((value - xi)/lambda))
 	   * exp(-SQUARE(gamma + delta * asinh((value - xi) / lambda))/2));
   }
   long double JohnsonSu::cdf(long double value) {
