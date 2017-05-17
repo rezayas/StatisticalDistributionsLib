@@ -6,8 +6,12 @@ namespace StatisticalDistributions {
     : alpha(alpha), beta(beta), dist(alpha, beta) {}
 
   Beta Beta::mean_sdev(long double mu, long double sigma) {
-    Beta x(boost::math::beta_distribution<long double>::find_alpha(mu, sigma),
-	   boost::math::beta_distribution<long double>::find_beta(mu, sigma));
+    Beta x(boost::math::beta_distribution<long double>::find_alpha(mu,
+								   sigma
+								    * sigma),
+	   boost::math::beta_distribution<long double>::find_beta(mu,
+								  sigma
+								  * sigma));
     return(x);
   }
   
