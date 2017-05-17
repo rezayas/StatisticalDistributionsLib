@@ -10,7 +10,7 @@ namespace StatisticalDistributions {
       twt += weights[i];
     for(int i = 0; i < N; i++)
       ps[i] = weights[i] / twt;
-    dist = std::discrete_distribution<long double>(weights.begin(),
+    dist = std::discrete_distribution<long>(weights.begin(),
 						   weights.end());
   }
   template<size_t N>

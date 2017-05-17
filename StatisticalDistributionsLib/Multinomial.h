@@ -19,6 +19,6 @@ namespace StatisticalDistributions {
   private:
     array<long double, N> ps;
     const long trials;
-    discrete_distribution<long double> dist;
+    discrete_distribution<long> dist;
   };
 }

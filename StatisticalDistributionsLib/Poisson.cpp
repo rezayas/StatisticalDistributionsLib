@@ -6,7 +6,7 @@ namespace StatisticalDistributions {
 
   Poisson::Poisson(long double mu) : mu(mu), dist(mu) {}
   long double Poisson::pdf(long value) {
-    return(std::pow(mu, value) * std::exp(-mu) / tgamma(value + 1));
+    return(std::pow(mu, value) * std::exp(-mu) / tgamma((long double)value + 1));
   }
   long double Poisson::cdf(long value) {
     if(value < 0)
