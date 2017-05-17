@@ -4,7 +4,9 @@
 namespace StatisticalDistributions {
   class UniformDiscrete : public StatisticalDistribution<long> {
   public:
+    // Uniform on low <= i < high
     UniformDiscrete(long low, long high);
+    // Uniform on 0 <= i < n
     UniformDiscrete(long n);
     virtual long double pdf(long value);
     virtual long double cdf(long value);

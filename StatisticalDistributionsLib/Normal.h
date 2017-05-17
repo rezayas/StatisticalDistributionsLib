@@ -1,10 +1,10 @@
 #pragma once
 #include "StatisticalDistribution.h"
 
-namespace StatisticalDistributions
-{
+namespace StatisticalDistributions {
   class Normal : public StatisticalDistribution<long double> {
   public:
+    // I should hope you don't need an explanation.
     Normal(long double mu = 0, long double sigma = 1);
     virtual long double pdf(long double value);
     virtual long double cdf(long double value);

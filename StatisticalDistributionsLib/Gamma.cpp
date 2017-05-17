@@ -1,8 +1,7 @@
 #include "Gamma.h"
 #include <boost/math/special_functions/gamma.hpp>
 
-namespace StatisticalDistributions
-{
+namespace StatisticalDistributions {
   Gamma::Gamma(long double alpha, long double beta, long double shift)
     : dist(alpha, beta), alpha(alpha), beta(beta), shift(shift) {
     pdfc = 0;

@@ -1,7 +1,6 @@
 #include "Bernoulli.h"
 
 namespace StatisticalDistributions {
-  // p is probability of success.
 
   Bernoulli::Bernoulli(long double p)
     : dist(p), p(p) {}

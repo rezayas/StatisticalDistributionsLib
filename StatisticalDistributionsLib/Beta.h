@@ -2,10 +2,10 @@
 #include "StatisticalDistribution.h"
 #include <boost/math/distributions/beta.hpp>
 
-namespace StatisticalDistributions
-{
+namespace StatisticalDistributions {
   class Beta : public StatisticalDistribution<long double> {
   public:
+    // The distribution here is proportional to f(x) = x^(α-1)(1-x)^(β-1).
     Beta(long double alpha, long double beta);
     static Beta mean_sdev(long double mu, long double sigma);
     virtual long double pdf(long double value);

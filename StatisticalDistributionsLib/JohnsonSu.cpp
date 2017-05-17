@@ -2,8 +2,7 @@
 #include <boost/math/special_functions/erf.hpp>
 #define SQUARE(x) ((x)*(x))
 
-namespace StatisticalDistributions
-{
+namespace StatisticalDistributions {
   static const long double sqrt2 = sqrt(2);
   using namespace std;
   JohnsonSu::JohnsonSu(long double gamma, long double xi, long double delta, long double lambda)

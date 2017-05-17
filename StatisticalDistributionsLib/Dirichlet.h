@@ -8,6 +8,7 @@ namespace StatisticalDistributions {
   class Dirichlet : public StatisticalDistribution<array<long double, N> > {
   public:
     Dirichlet(array<long double, N> alphas);
+    // See the Wikipedia page for the Dirichlet distribution for the meaning.
     virtual long double pdf(array<long double, N> x);
     virtual long double cdf(array<long double, N> x) {
       return(0); // CDF unimplementable.

@@ -4,7 +4,8 @@
 namespace StatisticalDistributions {
   class Uniform : public StatisticalDistribution<long double> {
   public:
-    Uniform(long double min, long double max);
+    // Well, this is easy.
+    Uniform(long double min = 0, long double max = 1);
     virtual long double pdf(long double value);
     virtual long double cdf(long double value);
     virtual long double Inverse(long double value);

@@ -4,6 +4,7 @@
 namespace StatisticalDistributions {
   class Poisson : public StatisticalDistribution<long> {
   public:
+    // μ is the expected value here.
     Poisson(long double mu = 1);
     virtual long double pdf(long value);
     virtual long double cdf(long value);

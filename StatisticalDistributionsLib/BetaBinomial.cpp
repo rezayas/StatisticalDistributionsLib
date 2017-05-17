@@ -3,7 +3,6 @@
 #include <boost/math/special_functions/binomial.hpp>
 
 namespace StatisticalDistributions {
-
   BetaBinomial::BetaBinomial(long n, long double alpha, long double beta)
     : alpha(alpha), beta(beta), n(n), dist(alpha, beta) {}
   long double BetaBinomial::pdf(long value) {

@@ -5,6 +5,7 @@ namespace StatisticalDistributions
 {
   class JohnsonSu : public StatisticalDistribution<long double> {
   public:
+    // So that γ+δ*asinh((x-ξ)/λ) ~ N(0,1).
     JohnsonSu(long double gamma, long double xi,
 	      long double delta, long double lambda);
     virtual long double pdf(long double value);

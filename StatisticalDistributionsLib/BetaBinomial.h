@@ -4,6 +4,8 @@
 namespace StatisticalDistributions {
   class BetaBinomial : public StatisticalDistribution<long> {
   public:
+    // See the beta distribution for the distribution of p.
+    // Then take binomial(n, p).
     BetaBinomial(long n, long double alpha = 1, long double beta = 1);
     virtual long double pdf(long value);
     virtual long double cdf(long value);

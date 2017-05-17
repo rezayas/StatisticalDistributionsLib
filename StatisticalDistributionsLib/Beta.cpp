@@ -1,8 +1,7 @@
 #include "Beta.h"
 #include <boost/math/special_functions/beta.hpp>
 
-namespace StatisticalDistributions
-{
+namespace StatisticalDistributions {
   Beta::Beta(long double alpha, long double beta)
     : alpha(alpha), beta(beta), dist(alpha, beta) {}
 
