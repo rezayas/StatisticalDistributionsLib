@@ -9,19 +9,17 @@ using namespace std;
 
 int main()
 {
-	RNG myRNG(1);
+	RNG myRNG(2135342612);
 	array<long double, 4> sample;
 	for (int i = 0; i< 4; ++i)
 	  sample[i] = myRNG.RND01();
 
-	double sum = std::accumulate(sample.begin(), sample.end(), 0.0);
-	double mean = sum / sample.size();
-	
-	double sq_sum = std::inner_product(sample.begin(), sample.end(),
-					   sample.begin(), 0.0);
-	double stdev = std::sqrt(sq_sum / sample.size() - mean * mean);
-
-	
+	long double mean =
+	  accumulate(sample.begin(), sample.end(), 0.0) / 4;
+	long double acc = 0;
+	for(int i = 0; i < 4; i++)
+	  acc += (sample[i] - mean) * (sample[i] - mean);
+	long double stdev = sqrt(acc / 3);
 	cout << "mean: " << mean << " stdev: " << stdev << endl;
 	
 	Uniform myUniform(0, 10);
@@ -30,14 +28,11 @@ int main()
 	for (int i = 0; i< 10; ++i)
 		uSamples[i] = myUniform.Sample(myRNG);
 
-	
-	sum = std::accumulate(uSamples.begin(), uSamples.end(), 0.0);
-	mean = sum / uSamples.size();
-	
-	sq_sum = std::inner_product(uSamples.begin(), uSamples.end(),
-					   uSamples.begin(), 0.0);
-	stdev = std::sqrt(sq_sum / uSamples.size() - mean * mean);
-
+	mean = accumulate(uSamples.begin(), uSamples.end(), 0.0) / 10;
+	acc = 0;
+	for(int i = 0; i < 10; i++)
+	  acc += (uSamples[i] - mean) * (uSamples[i] - mean);
+	stdev = sqrt(acc / 9);
 	
 	cout << "mean: " << mean << " stdev: " << stdev << endl;
 
