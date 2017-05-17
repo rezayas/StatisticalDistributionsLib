@@ -1,17 +1,17 @@
 #pragma once
 #include "StatisticalDistribution.h"
+#include <vector>
 
 namespace StatisticalDistributions {
-  class UniformDiscrete : public StatisticalDistribution<long> {
+  class Empirical : public StatisticalDistribution<long> {
   public:
-    UniformDiscrete(long low, long high);
-    UniformDiscrete(long n);
+    Empirical(std::vector<long double> weights);
     virtual long double pdf(long value);
     virtual long double cdf(long value);
     virtual long Inverse(long double value);
     virtual long operator()(std::mt19937_64 &g);
   private:
-    const long low, high;
-    std::uniform_int_distribution<long> dist;
+    std::vector<long double> p, q;
+    std::discrete_distribution<long> dist;
   };
 }

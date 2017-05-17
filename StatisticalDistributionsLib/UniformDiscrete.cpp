@@ -14,7 +14,7 @@ namespace StatisticalDistributions {
       return 1;
     if(value < low)
       return 0;
-    return((value - low + 1.0L) / (high - low)
+    return((value - low + 1.0L) / (high - low));
   }
   long UniformDiscrete::Inverse(long double value) {
       return((long)(value * (high - low)) + low);
