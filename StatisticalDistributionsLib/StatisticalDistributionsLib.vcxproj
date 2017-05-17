@@ -130,14 +130,53 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bernoulli.h" />
+    <ClInclude Include="Beta.h" />
+    <ClInclude Include="BetaBinomial.h" />
+    <ClInclude Include="Binomial.h" />
+    <ClInclude Include="ChiSquared.h" />
+    <ClInclude Include="Dirichlet.h" />
+    <ClInclude Include="Empirical.h" />
+    <ClInclude Include="Gamma.h" />
+    <ClInclude Include="GammaPoisson.h" />
+    <ClInclude Include="JohnsonSb.h" />
+    <ClInclude Include="JohnsonSl.h" />
+    <ClInclude Include="JohnsonSu.h" />
+    <ClInclude Include="Lognormal.h" />
+    <ClInclude Include="Multinomial.h" />
+    <ClInclude Include="NegBinomial.h" />
+    <ClInclude Include="Normal.h" />
+    <ClInclude Include="Poisson.h" />
     <ClInclude Include="StatisticalDistribution.h" />
     <ClInclude Include="Exponential.h" />
     <ClInclude Include="RNG.h" />
+    <ClInclude Include="Triangular.h" />
     <ClInclude Include="Uniform.h" />
+    <ClInclude Include="UniformDiscrete.h" />
+    <ClInclude Include="Weibull.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bernoulli.cpp" />
+    <ClCompile Include="Beta.cpp" />
+    <ClCompile Include="BetaBinomial.cpp" />
+    <ClCompile Include="Binomial.cpp" />
+    <ClCompile Include="ChiSquared.cpp" />
+    <ClCompile Include="Dirichlet.cpp" />
+    <ClCompile Include="Empirical.cpp" />
     <ClCompile Include="Exponential.cpp" />
+    <ClCompile Include="Gamma.cpp" />
+    <ClCompile Include="GammaPoisson.cpp" />
+    <ClCompile Include="JohnsonSb.cpp" />
+    <ClCompile Include="JohnsonSu.cpp" />
+    <ClCompile Include="Lognormal.cpp" />
+    <ClCompile Include="Multinomial.cpp" />
+    <ClCompile Include="NegBinomial.cpp" />
+    <ClCompile Include="Normal.cpp" />
+    <ClCompile Include="Poisson.cpp" />
+    <ClCompile Include="Triangular.cpp" />
     <ClCompile Include="Uniform.cpp" />
+    <ClCompile Include="UniformDiscrete.cpp" />
+    <ClCompile Include="Weibull.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
