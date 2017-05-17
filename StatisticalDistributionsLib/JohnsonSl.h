@@ -1,8 +1,7 @@
 #pragma once
 #include "StatisticalDistribution.h"
 
-namespace StatisticalDistributions
-{
+namespace StatisticalDistributions {
   class JohnsonSl : public StatisticalDistribution<long double> {
   public:
     // So that γ+δ*ln((x-ξ)/λ) is N(0,1).
