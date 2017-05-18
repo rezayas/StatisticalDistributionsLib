@@ -7,11 +7,21 @@
 using namespace StatisticalDistributions;
 using namespace std;
 
-int main()
-{
+extern void testBernoulli(mt19937_64 &g);
+extern void testBeta(mt19937_64 &g);
+extern void testBetaBinomial(mt19937_64 &g);
+extern void testBinomial(mt19937_64 &g);
+extern void testChiSquared(mt19937_64 &g);
+extern void testDirichlet(mt19937_64 &g);
+extern void testEmpirical(mt19937_64 &g);
+extern void testExponential(mt19937_64 &g);
 
-  
-  RNG myRNG(2135342612);
+
+int main() {
+  long seed;
+  cout << "Enter seed: ";
+  cin >> seed;
+  RNG myRNG(seed);
   array<long double, 1000> sample;
   for (int i = 0; i< 1000; ++i)
     sample[i] = myRNG.RND01();
@@ -24,7 +34,7 @@ int main()
   long double stdev = sqrt(acc / 999);
   cout << "mean: " << mean << "; stdev: " << stdev << endl;
   cout << "(Expected: μ = .5, σ = .289)" << endl;
-
+  mt19937_64 &g = myRNG.mt_;
 
   cout << "Testing Uniform:" << endl;
   Uniform myUniform(0, 10);
@@ -40,5 +50,12 @@ int main()
   
   cout << "mean: " << mean << "; stdev: " << stdev << endl;
   cout << "(Expected: μ = 5, σ = 2.89)" << endl;
-  
+  testBernoulli(g);
+  testBeta(g);
+  testBetaBinomial(g);
+  testBinomial(g);
+  testChiSquared(g);
+  testDirichlet(g);
+  testEmpirical(g);
+  testExponential(g);
 }

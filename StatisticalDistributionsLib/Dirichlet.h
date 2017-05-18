@@ -14,7 +14,7 @@ namespace StatisticalDistributions {
       return(0); // CDF unimplementable.
     }
     virtual array<long double, N> Inverse(long double x) {
-      return(0); // iCDF unimplementable.
+      return(array<long double, N>()); // iCDF unimplementable.
     }
     virtual array<long double, N> operator()(mt19937_64 &g);
   private:
@@ -23,3 +23,6 @@ namespace StatisticalDistributions {
     array<gamma_distribution<long double>, N> dists;
   };
 }
+
+#include "Dirichlet.t"
+// Because C++ templates must be in headers. It's really annoying.

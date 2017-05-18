@@ -16,6 +16,6 @@ namespace StatisticalDistributions {
     const long double alpha, beta;
     std::uniform_real_distribution<long double> uni;
     static bool init;
-    const boost::math::beta_distribution<long double> dist;
+    boost::math::beta_distribution<long double> dist;
   };
 }

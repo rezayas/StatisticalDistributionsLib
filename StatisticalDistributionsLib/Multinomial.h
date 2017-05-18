@@ -17,7 +17,7 @@ namespace StatisticalDistributions {
       return(0); // CDF unimplementable.
     }
     virtual array<long, N> Inverse(long double x) {
-      return(0); // iCDF unimplementable.
+      return(array<long, N>()); // iCDF unimplementable.
     }
     virtual array<long, N> operator()(mt19937_64 &g);
   private:
@@ -26,3 +26,5 @@ namespace StatisticalDistributions {
     discrete_distribution<long> dist;
   };
 }
+
+#include "Multinomial.t"
