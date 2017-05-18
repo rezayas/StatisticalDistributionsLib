@@ -14,7 +14,8 @@ namespace StatisticalDistributions {
     virtual long double operator()(std::mt19937_64 &g);
   private:
     const long double alpha, beta;
-    static std::uniform_real_distribution<long double> uni;
+    std::uniform_real_distribution<long double> uni;
+    static bool init;
     const boost::math::beta_distribution<long double> dist;
   };
 }
