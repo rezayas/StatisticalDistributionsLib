@@ -1,5 +1,3 @@
-#include "Dirichlet.h"
-
 namespace StatisticalDistributions {
 
   template<size_t N>

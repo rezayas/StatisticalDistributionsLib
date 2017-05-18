@@ -1,5 +1,3 @@
-#include "Multinomial.h"
-
 namespace StatisticalDistributions {
 
   template<size_t N>

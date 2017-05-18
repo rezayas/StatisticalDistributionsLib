@@ -15,6 +15,10 @@ extern void testChiSquared(mt19937_64 &g);
 extern void testDirichlet(mt19937_64 &g);
 extern void testEmpirical(mt19937_64 &g);
 extern void testExponential(mt19937_64 &g);
+extern void testGamma(mt19937_64 &g);
+extern void testJohnsonSu(mt19937_64 &g);
+extern void testJohnsonSb(mt19937_64 &g);
+extern void testJohnsonSl(mt19937_64 &g);
 
 
 int main() {
@@ -58,4 +62,8 @@ int main() {
   testDirichlet(g);
   testEmpirical(g);
   testExponential(g);
+  testGamma(g);
+  testJohnsonSu(g);
+  testJohnsonSb(g);
+  testJohnsonSl(g);
 }

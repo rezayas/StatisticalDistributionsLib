@@ -23,8 +23,8 @@ namespace StatisticalDistributions {
       return(0);
     if(z > 1)
       return(1);
-    return((erf((gamma + delta * log(z / (1-z)))/sqrt(2))
-	    + 1) / 2);
+    
+    return((erf((gamma + delta * log(z / (1-z)))/sqrt(2)) + 1) / 2);
   }
   long double JohnsonSb::Inverse(long double value) {
     long double y =
