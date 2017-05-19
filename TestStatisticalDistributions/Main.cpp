@@ -23,6 +23,10 @@ extern void testLognormal(mt19937_64 &g);
 extern void testMultinomial(mt19937_64 &g);
 extern void testNegBinomial(mt19937_64 &g);
 extern void testNormal(mt19937_64 &g);
+extern void testUniformDiscrete(mt19937_64 &g);
+extern void testPoisson(mt19937_64 &g);
+extern void testTriangular(mt19937_64 &g);
+extern void testWeibull(mt19937_64 &g);
 
 int main() {
   long seed;
@@ -73,4 +77,8 @@ int main() {
   testMultinomial(g);
   testNegBinomial(g);
   testNormal(g);
+  testPoisson(g);
+  testTriangular(g);
+  testUniformDiscrete(g);
+  testWeibull(g);
 }
