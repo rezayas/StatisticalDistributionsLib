@@ -26,8 +26,8 @@ void testGamma(mt19937_64 &g) {
   for(int i = 0; i < 1000; i++)
     sample[i] = gam(g);
   output_xbar_s2(sample);
-  cout << "(Expected: μ = " << alpha * beta
-       << ", σ² = " << alpha * beta * beta
+  cout << "(Expected: μ = " << (alpha * beta)
+       << ", σ² = " << (alpha * beta * beta)
        << ")" << endl;
 }
 
@@ -47,10 +47,10 @@ void testJohnsonSu(mt19937_64 &g) {
   for(int i = 0; i < 1000; i++)
     sample[i] = jon(g);
   output_xbar_s2(sample);
-  cout << "(Expected: μ = " << xi - lambda * exp(1 / delta / delta / 2)
+  cout << "(Expected: μ = " << (xi - lambda * exp(1 / delta / delta / 2))
     * sinh(gamma / delta)
-       << ", σ² = " << lambda * lambda / 2 * (exp(1/delta/delta) - 1)
-    * (exp(1/delta/delta) * cosh(2 * gamma / delta) + 1)
+       << ", σ² = " << (lambda * lambda / 2 * (exp(1/delta/delta) - 1)
+			* (exp(1/delta/delta) * cosh(2 * gamma / delta) + 1))
        << ")" << endl;
 }
 

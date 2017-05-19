@@ -14,7 +14,7 @@ void output_xbar_s2(array<T, N> sample) {
   long double mean =
     accumulate(sample.begin(), sample.end(), 0.0) / N;
   long double acc = 0;
-  for(int i = 0; i < 1000; i++)
+  for(int i = 0; i < N; i++)
     acc += (sample[i] - mean) * (sample[i] - mean);
   long double variance = acc / (N-1);
   cout << "mean: " << mean << "; variance: " << variance << endl;
@@ -41,8 +41,8 @@ void testBeta(mt19937_64 &g) {
   for(int i = 0; i < 1000; i++)
     sample[i] = bet(g);
   output_xbar_s2(sample);
-  cout << "(Expected: μ = " << alpha / (alpha + beta) << ", σ² = "
-       << alpha * beta / (alpha + beta) / (alpha + beta) / (alpha + beta + 1)
+  cout << "(Expected: μ = " << (alpha / (alpha + beta)) << ", σ² = "
+       << (alpha * beta / (alpha + beta) / (alpha + beta) / (alpha + beta + 1))
        << ")" << endl;
 }
 
@@ -61,26 +61,27 @@ void testBetaBinomial(mt19937_64 &g) {
   for(int i = 0; i < 1000; i++)
     sample[i] = betbin(g);
   output_xbar_s2(sample);
-  cout << "(Expected: μ = " << alpha / (alpha + beta) * n << ", σ² = "
-       << n * alpha * beta * (alpha + beta + n)
-    / (alpha + beta) / (alpha + beta) / (alpha + beta + 1)
+  cout << "(Expected: μ = " << (alpha / (alpha + beta) * n) << ", σ² = "
+       << (n * alpha * beta * (alpha + beta + n)
+	   / (alpha + beta) / (alpha + beta) / (alpha + beta + 1))
        << ")" << endl;
 }
 
 void testBinomial(mt19937_64 &g) {
+  cout << "Testing binomial:" << endl;
   array<long, 1000> sample;
   long n;
   long double p;
   cout << "Enter p: ";
 	  
-	  cin >> p; // Why is this being indented for no reason?
+  cin >> p;
   cout << "Enter n: ";
   cin >> n;
   Binomial bin(n, p);
   for(int i = 0; i < 1000; i++)
     sample[i] = bin(g);
   output_xbar_s2(sample);
-  cout << "(Expected: μ = " << n * p
-       << ", σ² = " << n * p * (1-p) 
+  cout << "(Expected: μ = " << (n * p)
+       << ", σ² = " << (n * p * (1-p))
        << ")" << endl;
 }

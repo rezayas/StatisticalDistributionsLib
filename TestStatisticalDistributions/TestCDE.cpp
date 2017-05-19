@@ -24,7 +24,7 @@ void testChiSquared(mt19937_64 &g) {
     sample[i] = csq(g);
   output_xbar_s2(sample);
   cout << "(Expected: μ = " << dof
-       << ", σ² = " << 2 * dof
+       << ", σ² = " << (2 * dof)
        << ")" << endl;
 }
 
@@ -46,9 +46,9 @@ void testDirichlet(mt19937_64 &g) {
   }   
   for(int i = 0; i < 3; i++) {
     output_xbar_s2(sample[i]);
-    cout << "(Expected: μ" << i << " = " << alpha[i] / al0
+    cout << "(Expected: μ" << i << " = " << (alpha[i] / al0)
 	 << ", σ²" << i << " = "
-	 << alpha[i] * (al0 - alpha[i]) / al0 / al0 / (al0 + 1)
+	 << (alpha[i] * (al0 - alpha[i]) / al0 / al0 / (al0 + 1))
 	 << ")" << endl;
   }
 }
@@ -79,7 +79,7 @@ void testExponential(mt19937_64 &g) {
   for(int i = 0; i < 1000; i++)
     sample[i] = exp(g);
   output_xbar_s2(sample);
-  cout << "(Expected: μ = " << 1 / lambda
-       << ", σ² = " << 1 / lambda / lambda
+  cout << "(Expected: μ = " << (1 / lambda)
+       << ", σ² = " << (1 / lambda / lambda)
        << ")" << endl;
 }

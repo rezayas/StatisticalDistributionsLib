@@ -19,7 +19,10 @@ extern void testGamma(mt19937_64 &g);
 extern void testJohnsonSu(mt19937_64 &g);
 extern void testJohnsonSb(mt19937_64 &g);
 extern void testJohnsonSl(mt19937_64 &g);
-
+extern void testLognormal(mt19937_64 &g);
+extern void testMultinomial(mt19937_64 &g);
+extern void testNegBinomial(mt19937_64 &g);
+extern void testNormal(mt19937_64 &g);
 
 int main() {
   long seed;
@@ -66,4 +69,8 @@ int main() {
   testJohnsonSu(g);
   testJohnsonSb(g);
   testJohnsonSl(g);
+  testLognormal(g);
+  testMultinomial(g);
+  testNegBinomial(g);
+  testNormal(g);
 }
