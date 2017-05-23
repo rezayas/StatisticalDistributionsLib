@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StatisticalDistributionsLib", "StatisticalDistributionsLib\StatisticalDistributionsLib.vcxproj", "{631E782D-464E-4D4F-A443-BD9399B0A7DA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestStatisticaDistributions", "TestStatisticaDistributions\TestStatisticaDistributions.vcxproj", "{97A1F85E-74A1-4BD5-9F8C-62193A5A1DD3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestStatisticaDistributions", "TestStatisticalDistributions\TestStatisticalDistributions.vcxproj", "{97A1F85E-74A1-4BD5-9F8C-62193A5A1DD3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{631E782D-464E-4D4F-A443-BD9399B0A7DA} = {631E782D-464E-4D4F-A443-BD9399B0A7DA}
 	EndProjectSection
