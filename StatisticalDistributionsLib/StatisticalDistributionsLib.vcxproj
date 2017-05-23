@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -90,6 +90,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\local\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -162,7 +163,6 @@
     <ClCompile Include="BetaBinomial.cpp" />
     <ClCompile Include="Binomial.cpp" />
     <ClCompile Include="ChiSquared.cpp" />
-    <ClCompile Include="Dirichlet.cpp" />
     <ClCompile Include="Empirical.cpp" />
     <ClCompile Include="Exponential.cpp" />
     <ClCompile Include="Gamma.cpp" />
@@ -170,7 +170,6 @@
     <ClCompile Include="JohnsonSb.cpp" />
     <ClCompile Include="JohnsonSu.cpp" />
     <ClCompile Include="Lognormal.cpp" />
-    <ClCompile Include="Multinomial.cpp" />
     <ClCompile Include="NegBinomial.cpp" />
     <ClCompile Include="Normal.cpp" />
     <ClCompile Include="Poisson.cpp" />
@@ -178,6 +177,10 @@
     <ClCompile Include="Uniform.cpp" />
     <ClCompile Include="UniformDiscrete.cpp" />
     <ClCompile Include="Weibull.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dirichlet.t" />
+    <None Include="Multinomial.t" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

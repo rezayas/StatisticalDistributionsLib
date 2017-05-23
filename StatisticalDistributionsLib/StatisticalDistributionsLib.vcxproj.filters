@@ -113,9 +113,6 @@
     <ClCompile Include="ChiSquared.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Dirichlet.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Empirical.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -132,9 +129,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Lognormal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Multinomial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="NegBinomial.cpp">
@@ -155,5 +149,13 @@
     <ClCompile Include="Weibull.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Multinomial.t">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Dirichlet.t">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
