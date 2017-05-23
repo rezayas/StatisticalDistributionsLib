@@ -1,4 +1,7 @@
 #pragma once
+#include <array>
+#include <numeric>
+
 template<class T, size_t N>
 void output_xbar_s2(array<T, N> sample) {
   long double mean =
