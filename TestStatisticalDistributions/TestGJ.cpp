@@ -7,12 +7,10 @@
 #include <numeric>
 #include <vector>
 #include <cmath>
+#include "sbar.h"
 
 using namespace StatisticalDistributions;
 using namespace std;
-
-template<class T, size_t N>
-extern void output_xbar_s2(array<T, N> sample);
 
 void testGamma(mt19937_64 &g) {
   cout << "Testing Γ:" << endl;

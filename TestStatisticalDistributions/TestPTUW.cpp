@@ -6,13 +6,10 @@
 #include <array>
 #include <numeric>
 #include <vector>
+#include "sbar.h"
 
 using namespace StatisticalDistributions;
 using namespace std;
-
-template<class T, size_t N>
-extern void output_xbar_s2(array<T, N> sample);
-
 
 void testPoisson(mt19937_64 &g) {
   cout << "Testing Poisson:" << endl;
@@ -55,7 +52,9 @@ void testUniformDiscrete(mt19937_64 &g) {
   for(int i = 0; i < 1000; i++)
     sample[i] = uni(g);
   output_xbar_s2(sample);
-  cout << "(Expected: μ = 4.5, σ² = 8.25)" << endl;
+  cout << "Expected: ";
+  array<long, 10> lst = {0,1,2,3,4,5,6,7,8,9};
+  output_xbar_s2(lst);
 }
 
 void testWeibull(mt19937_64 &g) {
