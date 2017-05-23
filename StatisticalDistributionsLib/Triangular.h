@@ -4,6 +4,8 @@
 namespace StatisticalDistributions {
   class Triangular : public StatisticalDistribution<long double> {
   public:
+    // Should be fairly obvious.
+    // Fails unless min <= mode <= max.
     Triangular(long double min, long double max, long double mode);
     virtual long double pdf(long double value);
     virtual long double cdf(long double value);

@@ -2,7 +2,6 @@
 
 namespace StatisticalDistributions {
 
-
   Bernoulli::Bernoulli(long double p)
     : dist(p), p(p) {}
   long double Bernoulli::pdf(bool value) {

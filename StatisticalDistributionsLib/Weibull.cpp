@@ -1,7 +1,6 @@
 #include "Weibull.h"
 
-namespace StatisticalDistributions
-{
+namespace StatisticalDistributions {
   Weibull::Weibull(long double a, long double b) : dist(a, b), a(a), b(b) {}
 
   long double Weibull::pdf(long double value) {

@@ -1,5 +1,3 @@
-#include "Multinomial.h"
-
 namespace StatisticalDistributions {
 
   template<size_t N>
@@ -26,7 +24,7 @@ namespace StatisticalDistributions {
   std::array<long, N> Multinomial<N>::operator()(std::mt19937_64 &g) {
     std::array<long, N> rval;
     rval.fill(0);
-    for(int i = 0; i < N; i++)
+    for(int i = 0; i < trials; i++)
       rval[dist(g)]++;
     return(rval);
   }

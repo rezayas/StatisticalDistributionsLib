@@ -4,6 +4,8 @@
 namespace StatisticalDistributions {
   class GammaPoisson : public StatisticalDistribution<long> {
   public:
+    // This picks μ from Γ(α,β) (see Gamma.h),
+    // then grabs from Pois(μ).
     GammaPoisson(long double alpha = 1, long double beta = 1);
     virtual long double pdf(long value);
     virtual long double cdf(long value);

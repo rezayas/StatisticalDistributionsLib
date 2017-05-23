@@ -1,10 +1,10 @@
 #pragma once
 #include "StatisticalDistribution.h"
 
-namespace StatisticalDistributions
-{
+namespace StatisticalDistributions {
   class Exponential : public StatisticalDistribution<long double> {
   public:
+    // Proportional to e^-(rate * x), but 0 if x < shift.
     Exponential(long double rate, long double shift = 0);
     virtual long double pdf(long double value);
     virtual long double cdf(long double value);

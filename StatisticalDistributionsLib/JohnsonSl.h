@@ -1,11 +1,11 @@
 #pragma once
 #include "StatisticalDistribution.h"
 
-namespace StatisticalDistributions
-{
-  class JohnsonSb : public StatisticalDistribution<long double> {
+namespace StatisticalDistributions {
+  class JohnsonSl : public StatisticalDistribution<long double> {
   public:
-    JohnsonSb(long double gamma, long double xi,
+    // So that γ+δ*ln((x-ξ)/λ) is N(0,1).
+    JohnsonSl(long double gamma, long double xi,
 	      long double delta, long double lambda);
     virtual long double pdf(long double value);
     virtual long double cdf(long double value);

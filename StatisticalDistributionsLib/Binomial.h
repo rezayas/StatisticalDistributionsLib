@@ -4,6 +4,7 @@
 namespace StatisticalDistributions {
   class Binomial : public StatisticalDistribution<long> {
   public:
+    // n is number of trials; p is probability of success.
     Binomial(long n = 1, long double p = .5);
     virtual long double pdf(long value);
     virtual long double cdf(long value);

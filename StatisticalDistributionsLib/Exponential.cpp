@@ -1,7 +1,6 @@
 #include "Exponential.h"
 
-namespace StatisticalDistributions
-{
+namespace StatisticalDistributions {
   Exponential::Exponential(long double rate, long double shift)
     : dist(rate), rate(rate), shift(shift) {}
 
