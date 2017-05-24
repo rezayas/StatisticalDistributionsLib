@@ -13,7 +13,7 @@ namespace StatisticalDistributions {
     return(boost::math::ibetac(value + 1, alpha, p));
   }
   long GammaPoisson::Inverse(long double value) {
-    return(alpha * beta); // The mean.
+    return((long)alpha * beta); // The mean.
   }
   long GammaPoisson::operator()(std::mt19937_64 &g) {
     std::poisson_distribution<long> x(dist(g)); //UGLY.
