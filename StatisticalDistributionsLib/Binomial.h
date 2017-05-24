@@ -1,5 +1,6 @@
 #pragma once
 #include "StatisticalDistribution.h"
+#include <boost/math/distributions/binomial.hpp>
 
 namespace StatisticalDistributions {
   class Binomial : public StatisticalDistribution<long> {
@@ -10,9 +11,8 @@ namespace StatisticalDistributions {
     virtual long double cdf(long value);
     virtual long Inverse(long double value);
     virtual long operator()(std::mt19937_64 &g);
+    const boost::math::binomial_distribution<long double, POLROUNDDOWN> cdist;
   private:
-    const long double p;
-    const long n;
     std::binomial_distribution<long> dist;
   };
 }

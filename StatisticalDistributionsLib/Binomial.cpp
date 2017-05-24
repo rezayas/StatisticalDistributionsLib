@@ -3,18 +3,16 @@
 
 namespace StatisticalDistributions {
 
-  using namespace boost::math;
-  Binomial::Binomial(long n, long double p) : n(n), p(p), dist(n, p) {}
+
+  Binomial::Binomial(long n, long double p) : dist(n, p), cdist(n, p) {}
   long double Binomial::pdf(long value) {
-    return(std::tgamma(1+n) / std::tgamma(1+value) / std::tgamma(1+n-value)
-	   * std::pow(p, value) * std::pow(1-p, n-value));
+    return(boost::math::pdf(cdist, value));
   }
   long double Binomial::cdf(long value) {
-    return(ibeta(n-value, value-1, p));
+    return(boost::math::cdf(cdist, value));
   }
   long Binomial::Inverse(long double value) {
-    return((long)(n*p));
-    // too hard. here's the floor of the mean. should be right.
+    return(boost::math::quantile(cdist, value));
   }
   long Binomial::operator()(std::mt19937_64 &g) {
     return(this->dist(g));

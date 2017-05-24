@@ -3,6 +3,8 @@
 #include <cmath>
 #include <random>
 
+#define POLROUNDDOWN boost::math::policies::policy<boost::math::policies::discrete_quantile<boost::math::policies::integer_round_down> >
+
 namespace StatisticalDistributions {
 
   template<typename distype> class StatisticalDistribution {

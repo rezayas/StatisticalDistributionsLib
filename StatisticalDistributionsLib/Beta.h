@@ -6,14 +6,15 @@ namespace StatisticalDistributions {
   class Beta : public StatisticalDistribution<long double> {
   public:
     // The distribution here is proportional to f(x) = x^(α-1)(1-x)^(β-1).
-    Beta(long double alpha, long double beta);
+    Beta(long double alpha, long double beta,
+	 long double scale = 1,long double shift = 0);
     static Beta mean_sdev(long double mu, long double sigma);
     virtual long double pdf(long double value);
     virtual long double cdf(long double value);
     virtual long double Inverse(long double value);
     virtual long double operator()(std::mt19937_64 &g);
   private:
-    const long double alpha, beta;
+    const long double scale, shift;
     std::uniform_real_distribution<long double> uni;
     static bool init;
     boost::math::beta_distribution<long double> dist;
