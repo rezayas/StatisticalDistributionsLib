@@ -1,5 +1,6 @@
 #pragma once
 #include "StatisticalDistribution.h"
+#include <boost/math/distributions/negative_binomial.hpp>
 
 namespace StatisticalDistributions {
   class GammaPoisson : public StatisticalDistribution<long> {
@@ -12,7 +13,8 @@ namespace StatisticalDistributions {
     virtual long Inverse(long double value);
     virtual long operator()(std::mt19937_64 &g);
   private:
-    const long double alpha, beta, p;
+    const boost::math::negative_binomial_distribution<long double,
+      POLROUNDDOWN> cdist;
     std::gamma_distribution<long double> dist;
   };
 }

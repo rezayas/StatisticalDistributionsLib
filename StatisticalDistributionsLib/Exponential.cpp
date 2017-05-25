@@ -2,7 +2,7 @@
 
 namespace StatisticalDistributions {
   Exponential::Exponential(long double rate, long double shift)
-    : dist(rate), cdist(rate), rate(rate), shift(shift) {}
+    : dist(rate), cdist(rate), shift(shift) {}
 
   long double Exponential::pdf(long double value) {
     return(boost::math::pdf(cdist, value - shift));

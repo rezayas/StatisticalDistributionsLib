@@ -15,6 +15,6 @@ namespace StatisticalDistributions {
   private:
     const long double shift;
     std::gamma_distribution<long double> dist;
-    boost::math::gamma_distribution<long double> cdist;
+    const boost::math::gamma_distribution<long double> cdist;
   };
 }
