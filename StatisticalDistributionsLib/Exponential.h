@@ -1,5 +1,6 @@
 #pragma once
 #include "StatisticalDistribution.h"
+#include <boost/math/distributions/exponential.hpp>
 
 namespace StatisticalDistributions {
   class Exponential : public StatisticalDistribution<long double> {
@@ -13,5 +14,6 @@ namespace StatisticalDistributions {
   private:
     const long double rate, shift;
     std::exponential_distribution<long double> dist;
+    boost::math::exponential_distribution<long double> cdist;
   };
 }
