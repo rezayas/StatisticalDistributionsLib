@@ -1,5 +1,6 @@
 #pragma once
 #include "StatisticalDistribution.h"
+#include <boost/math/distributions/weibull.hpp>
 
 namespace StatisticalDistributions {
   class Weibull : public StatisticalDistribution<long double> {
@@ -10,8 +11,8 @@ namespace StatisticalDistributions {
     virtual long double cdf(long double value);
     virtual long double Inverse(long double value);
     virtual long double operator()(std::mt19937_64 &g);
+    boost::math::weibull_distribution<long double> cdist;
   private:
-    const long double a, b;
     std::weibull_distribution<long double> dist;
   };
 }

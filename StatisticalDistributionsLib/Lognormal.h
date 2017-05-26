@@ -13,8 +13,8 @@ namespace StatisticalDistributions {
     virtual long double Inverse(long double value);
     virtual long double operator()(std::mt19937_64 &g);
     const long double shift;
-    std::lognormal_distribution<long double> dist;
+    const boost::math::lognormal_distribution<long double> cdist;
   private: 
-    const boost::lognormal_distribution<long double> cdist;
+    std::lognormal_distribution<long double> dist;
   };
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "StatisticalDistribution.h"
+#include <boost/math/distributions/triangular.hpp>
 
 namespace StatisticalDistributions {
   class Triangular : public StatisticalDistribution<long double> {
@@ -11,8 +12,8 @@ namespace StatisticalDistributions {
     virtual long double cdf(long double value);
     virtual long double Inverse(long double value);
     virtual long double operator()(std::mt19937_64 &g);
+    boost::math::triangular_distribution<long double> cdist;
   private:
-    const long double min, max, mode;
     std::piecewise_linear_distribution<long double> dist;
   };
 }
