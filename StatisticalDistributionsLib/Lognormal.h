@@ -1,5 +1,6 @@
 #pragma once
 #include "StatisticalDistribution.h"
+#include <boost/math/distributions/lognormal.hpp>
 
 namespace StatisticalDistributions {
   class Lognormal : public StatisticalDistribution<long double> {
@@ -11,8 +12,9 @@ namespace StatisticalDistributions {
     virtual long double cdf(long double value);
     virtual long double Inverse(long double value);
     virtual long double operator()(std::mt19937_64 &g);
-  private:
-    const long double mu, sigma, shift;
+    const long double shift;
     std::lognormal_distribution<long double> dist;
+  private: 
+    const boost::lognormal_distribution<long double> cdist;
   };
 }
