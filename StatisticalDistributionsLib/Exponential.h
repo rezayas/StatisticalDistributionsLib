@@ -11,9 +11,9 @@ namespace StatisticalDistributions {
     virtual long double cdf(long double value);
     virtual long double Inverse(long double value);
     virtual long double operator()(std::mt19937_64 &g);
+    const boost::math::exponential_distribution<long double> cdist;
+    const long double shift;
   private:
-    const long double rate, shift;
     std::exponential_distribution<long double> dist;
-    boost::math::exponential_distribution<long double> cdist;
   };
 }
