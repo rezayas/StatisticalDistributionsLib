@@ -1,5 +1,6 @@
 #pragma once
 #include "StatisticalDistribution.h"
+#include <boost/math/distributions/poisson.hpp>
 
 namespace StatisticalDistributions {
   class Poisson : public StatisticalDistribution<long> {
@@ -10,8 +11,8 @@ namespace StatisticalDistributions {
     virtual long double cdf(long value);
     virtual long Inverse(long double value);
     virtual long operator()(std::mt19937_64 &g);
+    const boost::math::poisson_distribution<long double, POLROUNDDOWN> cdist;
   private:
-    const long double mu;
     std::poisson_distribution<long> dist;
   };
 }

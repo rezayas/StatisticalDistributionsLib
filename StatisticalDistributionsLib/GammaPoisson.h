@@ -12,9 +12,9 @@ namespace StatisticalDistributions {
     virtual long double cdf(long value);
     virtual long Inverse(long double value);
     virtual long operator()(std::mt19937_64 &g);
-  private:
     const boost::math::negative_binomial_distribution<long double,
       POLROUNDDOWN> cdist;
+  private:
     std::gamma_distribution<long double> dist;
   };
 }

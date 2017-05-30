@@ -11,7 +11,7 @@ namespace StatisticalDistributions {
     virtual long double cdf(long double value);
     virtual long double Inverse(long double value);
     virtual long double operator()(std::mt19937_64 &g);
-    boost::math::weibull_distribution<long double> cdist;
+    const boost::math::weibull_distribution<long double> cdist;
   private:
     std::weibull_distribution<long double> dist;
   };

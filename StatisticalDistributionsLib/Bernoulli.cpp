@@ -11,7 +11,7 @@ namespace StatisticalDistributions {
     return(boost::math::cdf(cdist, value));
   }
   bool Bernoulli::Inverse(long double value) {
-    return(boost::math::quantile(cdist, value));
+    return((bool)boost::math::quantile(cdist, value));
   }
   bool Bernoulli::operator()(std::mt19937_64 &g) {
     return(this->dist(g));

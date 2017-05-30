@@ -12,7 +12,7 @@ namespace StatisticalDistributions {
     virtual long double cdf(long double value);
     virtual long double Inverse(long double value);
     virtual long double operator()(std::mt19937_64 &g);
-    boost::math::triangular_distribution<long double> cdist;
+    const boost::math::triangular_distribution<long double> cdist;
   private:
     std::piecewise_linear_distribution<long double> dist;
   };

@@ -12,7 +12,7 @@ namespace StatisticalDistributions {
     return(boost::math::cdf(cdist, value));
   }
   long Binomial::Inverse(long double value) {
-    return(boost::math::quantile(cdist, value));
+    return((long)boost::math::quantile(cdist, value));
   }
   long Binomial::operator()(std::mt19937_64 &g) {
     return(this->dist(g));
