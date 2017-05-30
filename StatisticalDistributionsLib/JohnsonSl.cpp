@@ -21,6 +21,6 @@ namespace StatisticalDistributions {
     return(std::exp(boost::math::quantile(cdist, value)) * sigma + mu);
   }
   long double JohnsonSl::operator()(std::mt19937_64 &g) {
-    return(std::exp(dist(g)) * lambda + xi);
+    return(std::exp(dist(g)) * sigma + mu);
   }
 }
