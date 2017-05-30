@@ -32,39 +32,40 @@ void testGamma(mt19937_64 &g) {
 void testJohnsonSu(mt19937_64 &g) {
   cout << "Testing Su:" << endl;
   array<long double, 1000> sample;
-  long double gamma, xi, delta, lambda;
+  long double gamma, delta, mu, sigma;
+  cout << "Enter μ: ";
+  cin >> mu;
+  cout << "Enter σ: ";
+  cin >> sigma;
   cout << "Enter γ: ";
   cin >> gamma;
-  cout << "Enter ξ: ";
-  cin >> xi;
   cout << "Enter δ: ";
   cin >> delta;
-  cout << "Enter λ: ";
-  cin >> lambda;
-  JohnsonSu jon(gamma, xi, delta, lambda);
+  JohnsonSu jon(mu, sigma, gamma, delta);
   for(int i = 0; i < 1000; i++)
     sample[i] = jon(g);
   output_xbar_s2(sample);
-  cout << "(Expected: μ = " << (xi - lambda * exp(1 / delta / delta / 2))
-    * sinh(gamma / delta)
-       << ", σ² = " << (lambda * lambda / 2 * (exp(1/delta/delta) - 1)
-			* (exp(1/delta/delta) * cosh(2 * gamma / delta) + 1))
+  long double y = exp(1 / delta / delta);
+  cout << "(Expected: μ = " << (mu - sigma * exp(1 / 2 / delta / delta)
+				* sinh(gamma / delta))
+       << ", σ² = " << (sigma * sigma * (y - 1)
+			* (y * cosh(2 * gamma / delta) + 1) / 2)
        << ")" << endl;
 }
 
 void testJohnsonSb(mt19937_64 &g) {
   cout << "Testing Sb:" << endl;
   array<long double, 1000> sample;
-  long double gamma, xi, delta, lambda;
+  long double gamma, delta, mu, sigma;
+  cout << "Enter μ: ";
+  cin >> mu;
+  cout << "Enter σ: ";
+  cin >> sigma;
   cout << "Enter γ: ";
   cin >> gamma;
-  cout << "Enter ξ: ";
-  cin >> xi;
   cout << "Enter δ: ";
   cin >> delta;
-  cout << "Enter λ: ";
-  cin >> lambda;
-  JohnsonSb jon(gamma, xi, delta, lambda);
+  JohnsonSb jon(mu, sigma, gamma, delta);
   for(int i = 0; i < 1000; i++)
     sample[i] = jon(g);
   output_xbar_s2(sample);
@@ -73,17 +74,22 @@ void testJohnsonSb(mt19937_64 &g) {
 void testJohnsonSl(mt19937_64 &g) {
   cout << "Testing Sl:" << endl;
   array<long double, 1000> sample;
-  long double gamma, xi, delta, lambda;
+  long double gamma, delta, mu, sigma;
+  cout << "Enter μ: ";
+  cin >> mu;
+  cout << "Enter σ: ";
+  cin >> sigma;
   cout << "Enter γ: ";
   cin >> gamma;
-  cout << "Enter ξ: ";
-  cin >> xi;
   cout << "Enter δ: ";
   cin >> delta;
-  cout << "Enter λ: ";
-  cin >> lambda;
-  JohnsonSl jon(gamma, xi, delta, lambda);
+  JohnsonSl jon(mu, sigma, gamma, delta);
   for(int i = 0; i < 1000; i++)
     sample[i] = jon(g);
   output_xbar_s2(sample);
+  cout << "(Expected: μ = " << (mu + sigma * exp((1 - 2 * gamma * delta)
+						 / 2 / delta / delta))
+       << ", σ² = " << (exp((1 - 2 * gamma * delta) / delta / delta)
+			* (exp(1 / delta / delta) - 1) * sigma * sigma)
+       << ")" << endl;
 }
