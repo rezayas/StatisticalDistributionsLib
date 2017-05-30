@@ -1,28 +1,23 @@
 #include "JohnsonSu.h"
-#include <boost/math/special_functions/erf.hpp>
 #define SQUARE(x) ((x)*(x))
 
 namespace StatisticalDistributions {
-  static const long double sqrt2 = sqrt(2);
-  using namespace std;
-  JohnsonSu::JohnsonSu(long double gamma, long double xi, long double delta, long double lambda)
-    : dist(-gamma / delta, delta), gamma(gamma), xi(xi), delta(delta),
-      lambda(lambda) {}
+  JohnsonSu::JohnsonSu(long double mu, long double sigma, long double gamma, long double delta)
+    : dist(-gamma / delta, 1 / delta), gamma(gamma), mu(mu), delta(delta),
+      sigma(sigma), cdist(-gamma / delta, 1 / delta) {}
 
   long double JohnsonSu::pdf(long double value) {
-    static const long double irt2pi = 1 / sqrt(8 * atan(1.0L));
-    return(delta * irt2pi / lambda / sqrt(1 + SQUARE((value - xi)/lambda))
-	   * exp(-SQUARE(gamma + delta * asinh((value - xi) / lambda))/2));
+    long double y = (value - mu) / sigma;
+    return(delta / sigma * std::sqrt(1 + y * y) *
+	   boost::math::pdf(cdist, std::asinh(y)));
   }
   long double JohnsonSu::cdf(long double value) {
-    return((erf((gamma + delta * asinh((value - xi)/lambda))/sqrt(2))
-	    + 1) / 2);
+    return(boost::math::cdf(cdist, std::asinh((value - mu)/sigma)));
   }
   long double JohnsonSu::Inverse(long double value) {
-    return(sinh((boost::math::erf_inv(2 * value - 1)*sqrt(2) - gamma)/delta)
-	   * lambda + xi);
+    return(std::sinh(boost::math::quantile(cdist, value)) * sigma + mu);
   }
   long double JohnsonSu::operator()(std::mt19937_64 &g) {
-    return(sinh(this->dist(g)) * lambda + xi);
+    return(sinh(this->dist(g)) * sigma + mu);
   }
 }
