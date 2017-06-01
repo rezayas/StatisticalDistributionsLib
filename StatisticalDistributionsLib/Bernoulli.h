@@ -7,12 +7,12 @@ namespace StatisticalDistributions {
   public:
     Bernoulli(long double p = .5);
     // p is the probability of success.
-    virtual long double pdf(bool value);
-    virtual long double cdf(bool value);
-    virtual bool Inverse(long double value);
-    virtual bool operator()(std::mt19937_64 &g);
+    virtual long double pdf(bool value) const;
+    virtual long double cdf(bool value) const;
+    virtual bool Inverse(long double value) const;
+    virtual bool operator()(std::mt19937_64 &g) const ;
     const boost::math::bernoulli_distribution<long double, POLROUNDDOWN> cdist;
   private:
-    std::bernoulli_distribution dist;
+    mutable std::bernoulli_distribution dist;
   };
 }

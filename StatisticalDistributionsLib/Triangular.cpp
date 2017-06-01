@@ -11,16 +11,16 @@ namespace StatisticalDistributions {
 							   a.end(),
 							   b.begin());
   }
-  long double Triangular::pdf(long double value) {
+  long double Triangular::pdf(long double value) const {
     return(boost::math::pdf(cdist, value));
   }
-  long double Triangular::cdf(long double value) {
+  long double Triangular::cdf(long double value) const {
     return(boost::math::cdf(cdist, value));
   }
-  long double Triangular::Inverse(long double value) {
+  long double Triangular::Inverse(long double value) const {
     return(boost::math::quantile(cdist, value));
   }
-  long double Triangular::operator()(std::mt19937_64 &g) {
+  long double Triangular::operator()(std::mt19937_64 &g) const {
     return(this->dist(g));
   }
 }

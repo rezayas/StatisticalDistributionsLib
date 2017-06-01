@@ -7,14 +7,14 @@ namespace StatisticalDistributions {
     : dist(gamma / delta, 1 / delta), gamma(gamma), mu(mu), delta(delta),
       sigma(sigma), cdist(-gamma / delta, 1 / delta) {}
 
-  long double JohnsonSb::pdf(long double value) {
+  long double JohnsonSb::pdf(long double value) const {
     long double z = (value - mu) / sigma;
     if(z < 0 || z > 1)
       return(0);
     return(boost::math::pdf(cdist, std::log(z / (1 - z)))
 	   * delta / sigma / z / (1 - z));
   }
-  long double JohnsonSb::cdf(long double value) {
+  long double JohnsonSb::cdf(long double value) const {
     long double z = (value - mu) / sigma;
     if(z < 0)
       return(0);
@@ -22,10 +22,10 @@ namespace StatisticalDistributions {
       return(1);
     return(boost::math::cdf(cdist, std::log(z / (1 - z))));
   }
-  long double JohnsonSb::Inverse(long double value) {
+  long double JohnsonSb::Inverse(long double value) const {
     return(sigma / (1 + std::exp(- boost::math::quantile(cdist, value))) + mu);
   }
-  long double JohnsonSb::operator()(std::mt19937_64 &g) {
+  long double JohnsonSb::operator()(std::mt19937_64 &g) const {
     return(sigma / (1 + std::exp(dist(g))) + mu);
   }
 }

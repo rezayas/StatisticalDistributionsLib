@@ -9,16 +9,16 @@ namespace StatisticalDistributions {
     return(x);
   }
   
-  long double Gamma::pdf(long double value) {
+  long double Gamma::pdf(long double value) const {
     return(boost::math::pdf(cdist, value - shift));
   }
-  long double Gamma::cdf(long double value) {
+  long double Gamma::cdf(long double value) const {
     return(boost::math::cdf(cdist, value - shift));
   }
-  long double Gamma::Inverse(long double value) {
+  long double Gamma::Inverse(long double value) const {
     return(boost::math::quantile(cdist, value) + shift);
   }
-  long double Gamma::operator()(std::mt19937_64 &g) {
-    return(this->dist(g));
+  long double Gamma::operator()(std::mt19937_64 &g) const {
+    return(this->dist(g) + shift);
   }
 }

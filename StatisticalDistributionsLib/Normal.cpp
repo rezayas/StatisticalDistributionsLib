@@ -7,16 +7,16 @@ namespace StatisticalDistributions {
   Normal::Normal(long double mu, long double sigma)
     : dist(mu, sigma), cdist(mu, sigma) {}
 
-  long double Normal::pdf(long double value) {
+  long double Normal::pdf(long double value) const {
     return(boost::math::pdf(cdist, value));
   }
-  long double Normal::cdf(long double value) {
+  long double Normal::cdf(long double value) const {
     return(boost::math::cdf(cdist, value));
   }
-  long double Normal::Inverse(long double value) {
+  long double Normal::Inverse(long double value) const {
     return(boost::math::quantile(cdist, value));
   }
-  long double Normal::operator()(std::mt19937_64 &g) {
+  long double Normal::operator()(std::mt19937_64 &g) const {
     return(this->dist(g));
   }
 }

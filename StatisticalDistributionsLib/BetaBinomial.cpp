@@ -5,18 +5,18 @@
 namespace StatisticalDistributions {
   BetaBinomial::BetaBinomial(long n, long double alpha, long double beta)
     : alpha(alpha), beta(beta), n(n), dist(alpha, beta) {}
-  long double BetaBinomial::pdf(long value) {
+  long double BetaBinomial::pdf(long value) const {
     return(boost::math::binomial_coefficient<long double>(n, value)
 	   * boost::math::beta(value + alpha, n - value + beta)
 	   / boost::math::beta(alpha, beta));
   }
-  long double BetaBinomial::cdf(long value) {
+  long double BetaBinomial::cdf(long value) const {
     return 0; //Can't do hypergeometric functions.
   }
-  long BetaBinomial::Inverse(long double value) {
+  long BetaBinomial::Inverse(long double value) const {
     return 0; //Can't do hypergeometric functions.
   }
-  long BetaBinomial::operator()(std::mt19937_64 &g) {
+  long BetaBinomial::operator()(std::mt19937_64 &g) const {
     std::binomial_distribution<long> x(n, dist(g)); //UGLY.
     return(x(g));
   }
