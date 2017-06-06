@@ -8,7 +8,7 @@ namespace StatisticalDistributions {
   template<size_t N>
   class DirichletMultinomial : public StatisticalDistribution<array<long, N> > {
   public:
-    DirichletMultinomial(array<long double, N> alphas, long trials);
+    DirichletMultinomial(array<const long double, N> alphas, long trials);
 
     // The pdf function doesn't bother to check whether the number of trials
     // is right.

@@ -1,7 +1,7 @@
 namespace StatisticalDistributions {
 
   template<size_t N>
-  Dirichlet<N>::Dirichlet(std::array<long double, N> alphas)
+  Dirichlet<N>::Dirichlet(std::array<const long double, N> alphas)
     : beta(-1), alphas(alphas) {
     for(int i = 0; i < N; i++)
       dists[i] = std::gamma_distribution<long double>(alphas[i]);
