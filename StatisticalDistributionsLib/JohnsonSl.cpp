@@ -4,9 +4,9 @@
 
 namespace StatisticalDistributions {
   JohnsonSl::JohnsonSl(long double mu, long double sigma, long double gamma, long double delta)
-    : dist(-gamma / delta, 1 / delta), gamma(gamma), mu(mu), delta(delta),
-      sigma(sigma), cdist(-gamma / delta, 1/delta) {}
-
+    : dist(-gamma / std::abs(delta), 1 / std::abs(delta)), gamma(gamma),
+      mu(mu), delta(std::abs(delta)), sigma(sigma),
+      cdist(-gamma / std::abs(delta), 1 / std::abs(delta)) {}
   long double JohnsonSl::pdf(long double value) const {
     long double y = (value - mu) / gamma;
     return(delta / y * boost::math::pdf(cdist, std::log(y)));
