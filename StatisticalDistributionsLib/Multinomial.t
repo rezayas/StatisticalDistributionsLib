@@ -1,7 +1,7 @@
 namespace StatisticalDistributions {
 
   template<size_t N>
-  Multinomial<N>::Multinomial(std::array<const long double, N> weights, long trials)
+  Multinomial<N>::Multinomial(std::array<long double, N> weights, long trials)
     : trials(trials) {
     long double twt = 0;
     for(int i = 0; i < N; i++)

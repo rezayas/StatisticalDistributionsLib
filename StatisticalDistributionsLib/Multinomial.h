@@ -7,7 +7,7 @@ namespace StatisticalDistributions {
   class Multinomial : public StatisticalDistribution<array<long, N> > {
   public:
     // The weights will be normalized.
-    Multinomial(array<const long double, N> weights, long trials);
+    Multinomial(array<long double, N> weights, long trials);
 
     // The pdf function doesn't bother to check whether the number of trials
     // is right.

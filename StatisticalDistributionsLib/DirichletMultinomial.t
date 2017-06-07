@@ -3,7 +3,7 @@
 namespace StatisticalDistributions {
 
   template<size_t N>
-  DirichletMultinomial<N>::DirichletMultinomial(std::array<const long double, N> alphas, long trials)
+  DirichletMultinomial<N>::DirichletMultinomial(std::array<long double, N> alphas, long trials)
     : trials(trials), dist(alphas), alphas(alphas) {
     for(int i = 0; i < N; i++)
       talpha += alphas[i];
