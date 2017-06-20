@@ -15,9 +15,9 @@ void testPoisson(mt19937_64 &g) {
   cout << "Testing Poisson:" << endl;
   array<long, 1000> sample;
   long double mu;
-  Poisson pois(mu);
   cout << "Enter μ: ";
   cin >> mu;
+  Poisson pois(mu);
   for(int i = 0; i < 1000; i++)
     sample[i] = pois(g);
   output_xbar_s2(sample);

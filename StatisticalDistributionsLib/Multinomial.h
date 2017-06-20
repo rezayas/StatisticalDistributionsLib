@@ -3,6 +3,7 @@
 #include <array>
 
 namespace StatisticalDistributions {
+	using namespace std;
   template<size_t N>
   class Multinomial : public StatisticalDistribution<array<long, N> > {
   public:
