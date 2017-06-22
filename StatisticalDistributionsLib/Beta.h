@@ -10,6 +10,10 @@ namespace StatisticalDistributions {
     Beta(long double alpha, long double beta,
 	 long double scale = 1,long double shift = 0);
     static Beta mean_sdev(long double mu, long double sigma);
+    inline static Beta minmax(long double alpha, long double beta,
+		       long double min = 0, long double max = 1) {
+      return(Beta(alpha, beta, max - min, min));
+    }
     virtual long double pdf(long double value) const;
     virtual long double cdf(long double value) const;
     virtual long double Inverse(long double value) const;
