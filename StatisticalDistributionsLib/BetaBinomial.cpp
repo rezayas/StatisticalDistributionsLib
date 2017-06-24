@@ -7,8 +7,9 @@ namespace StatisticalDistributions {
     : alpha(alpha), beta(beta), n(n), dist(alpha, beta) {}
   long double BetaBinomial::pdf(long value) const {
     return(boost::math::binomial_coefficient<long double>(n, value)
-	   * boost::math::beta(value + alpha, n - value + beta)
-	   / boost::math::beta(alpha, beta));
+	   * boost::math::beta<long double, long double>(value + alpha,
+							 n - value + beta)
+	   / boost::math::beta<long double, long double>(alpha, beta));
   }
   long double BetaBinomial::cdf(long value) const {
     return 0; //Can't do hypergeometric functions.
