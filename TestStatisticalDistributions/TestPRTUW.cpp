@@ -2,6 +2,7 @@
 #include "Triangular.h"
 #include "UniformDiscrete.h"
 #include "Weibull.h"
+#include "Uniform.h"
 #include <iostream>
 #include <array>
 #include <numeric>
@@ -25,6 +26,15 @@ void testPoisson(mt19937_64 &g) {
        << ")" << endl;
 }
 
+void testRNG(RNG &g) {
+  cout << "Testing RNG:" << endl;
+  array<long double, 1000> sample;
+  for(int i = 0; i < 1000; i++)
+    sample[i] = g.RND01();
+  output_xbar_s2(sample);
+  cout << "(Expected: μ = .5, σ² = " << 1./12 << ')' << endl;
+}
+
 void testTriangular(mt19937_64 &g) {
   cout << "Testing triangular: " << endl;
   array<long double, 1000> sample;
@@ -42,6 +52,23 @@ void testTriangular(mt19937_64 &g) {
   cout << "(Expected: μ = " << ((min + max + mode) / 3)
        << ", σ² = " << ((min * (min - max - mode) + max * (max - mode) +
 			 mode * mode) / 18)
+       << ")" << endl;
+}
+
+void testUniform(mt19937_64 &g) {
+  cout << "Testing uniform: " << endl;
+  array<long double, 1000> sample;
+  cout << "Enter min: ";
+  long double min, max;
+  cin >> min;
+  cout << "Enter max: ";
+  cin >> max;
+  Uniform uni(min, max);
+  for(int i = 0; i < 1000; i++)
+    sample[i] = uni(g);
+  output_xbar_s2(sample);
+  cout << "(Expected: μ = " << (min + max) / 2
+       << ", σ² = " << (max - min) * (max - min) / 12
        << ")" << endl;
 }
 

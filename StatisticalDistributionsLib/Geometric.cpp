@@ -2,7 +2,7 @@
 
 namespace StatisticalDistributions {
 
-  Geometric::Poisson(long double p) : cdist(p), dist(p) {}
+  Geometric::Geometric(long double p) : cdist(p), dist(p) {}
   long double Geometric::pdf(long value) const {
     return(boost::math::pdf(cdist, value));
   }

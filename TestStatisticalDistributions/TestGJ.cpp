@@ -1,4 +1,5 @@
 #include "Gamma.h"
+#include "Geometric.h"
 #include "JohnsonSu.h"
 #include "JohnsonSb.h"
 #include "JohnsonSl.h"
@@ -27,6 +28,20 @@ void testGamma(mt19937_64 &g) {
   cout << "(Expected: μ = " << (alpha * beta)
        << ", σ² = " << (alpha * beta * beta)
        << ")" << endl;
+}
+
+void testGeometric(mt19937_64 &g) {
+  cout << "Testing geometric:" << endl;
+  array<long, 1000> sample;
+  long double p;
+  cout << "Enter p: ";
+  cin >> p;
+  Geometric geo(p);
+  for(int i = 0; i < 1000; i++)
+    sample[i] = geo(g);
+  output_xbar_s2(sample);
+  cout << "Expected: μ = " << 1 / p - 1
+  << ", σ² = " << (1 - p) / p / p << ')' << endl;
 }
 
 void testJohnsonSu(mt19937_64 &g) {
