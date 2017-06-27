@@ -5,6 +5,10 @@
 
 #define POLROUNDDOWN boost::math::policies::policy<boost::math::policies::discrete_quantile<boost::math::policies::integer_round_down> >
 
+#ifdef _MSC_VER
+#define BOOST_NO_DEDUCED_TYPENAME
+#endif
+
 namespace StatisticalDistributions {
 
   template<typename distype> class StatisticalDistribution {
