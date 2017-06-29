@@ -2,7 +2,7 @@ OFILES = Bernoulli.o Gamma.o NegBinomial.o Beta.o GammaPoisson.o Normal.o BetaBi
 all: libStatisticalDistributions.a
 
 ${OFILES}: %.o: %.cpp $(if $(shell test -e %.h), %.h)
-	c++ -c -std=c++11z $<
+	c++ -c -std=c++1z $<
 
 libStatisticalDistributions.a: ${OFILES}
 	ar -rcs libStatisticalDist.a ${OFILES}

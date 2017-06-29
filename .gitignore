@@ -251,3 +251,4 @@ ModelManifest.xml
 # compilation
 *.o
 a.out
+lib*.a
