@@ -1,4 +1,4 @@
-#include "ChiSquared.h"
+#include "../include/StatisticalDistributionsLib/ChiSquared.h"
 
 namespace StatisticalDistributions {
 

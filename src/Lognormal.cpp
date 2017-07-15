@@ -1,4 +1,4 @@
-#include "Lognormal.h"
+#include "../include/StatisticalDistributionsLib/Lognormal.h"
 #include <boost/math/special_functions/erf.hpp>
 #define SQUARE(x) ((x)*(x))
 

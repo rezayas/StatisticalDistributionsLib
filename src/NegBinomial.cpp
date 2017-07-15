@@ -1,4 +1,4 @@
-#include "NegBinomial.h"
+#include "../include/StatisticalDistributionsLib/NegBinomial.h"
 #include <boost/math/special_functions/beta.hpp>
 
 namespace StatisticalDistributions {

@@ -1,4 +1,4 @@
-#include "Beta.h"
+#include "../include/StatisticalDistributionsLib/Beta.h"
 
 namespace StatisticalDistributions {
   Beta::Beta(long double alpha, long double beta,

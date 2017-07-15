@@ -1,4 +1,4 @@
-#include "Geometric.h"
+#include "../include/StatisticalDistributionsLib/Geometric.h"
 
 namespace StatisticalDistributions {
 

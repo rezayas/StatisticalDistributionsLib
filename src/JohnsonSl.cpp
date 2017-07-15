@@ -1,4 +1,4 @@
-#include "JohnsonSl.h"
+#include "../include/StatisticalDistributionsLib/JohnsonSl.h"
 #include <boost/math/special_functions/erf.hpp>
 #define SQUARE(x) ((x)*(x))
 

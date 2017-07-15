@@ -1,4 +1,4 @@
-#include "Exponential.h"
+#include "../include/StatisticalDistributionsLib/Exponential.h"
 
 namespace StatisticalDistributions {
   Exponential::Exponential(long double rate, long double shift)

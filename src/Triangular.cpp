@@ -1,4 +1,4 @@
-#include "Triangular.h"
+#include "../include/StatisticalDistributionsLib/Triangular.h"
 #include <array>
 
 namespace StatisticalDistributions {

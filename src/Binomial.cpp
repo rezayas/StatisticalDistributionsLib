@@ -1,4 +1,4 @@
-#include "Binomial.h"
+#include "../include/StatisticalDistributionsLib/Binomial.h"
 #include <boost/math/special_functions/beta.hpp>
 
 namespace StatisticalDistributions {

@@ -1,4 +1,4 @@
-#include "UniformDiscrete.h"
+#include "../include/StatisticalDistributionsLib/UniformDiscrete.h"
 
 namespace StatisticalDistributions {
 

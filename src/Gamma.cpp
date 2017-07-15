@@ -1,4 +1,4 @@
-#include "Gamma.h"
+#include "../include/StatisticalDistributionsLib/Gamma.h"
 
 namespace StatisticalDistributions {
   Gamma::Gamma(long double alpha, long double beta, long double shift)

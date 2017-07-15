@@ -1,4 +1,4 @@
-#include "JohnsonSu.h"
+#include "../include/StatisticalDistributionsLib/JohnsonSu.h"
 #define SQUARE(x) ((x)*(x))
 
 namespace StatisticalDistributions {
