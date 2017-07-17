@@ -3,6 +3,7 @@ set(header_path "${StatisticalDistributionsLib_SOURCE_DIR}/include/StatisticalDi
 set(header ${header_path}/Bernoulli.h
            ${header_path}/Beta.h
            ${header_path}/BetaBinomial.h
+           ${header_path}/Binomial.h
            ${header_path}/ChiSquared.h
            ${header_path}/Empirical.h
            ${header_path}/Exponential.h
@@ -20,17 +21,19 @@ set(header ${header_path}/Bernoulli.h
            ${header_path}/Triangular.h
            ${header_path}/Uniform.h
            ${header_path}/UniformDiscrete.h
-           ${header_path}/Weibull.h)
+           ${header_path}/Weibull.h
+           ${header_path}/StatisticalDistribution.h)
 
 # Require C++14 compilation
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Set source files; not sure what to do with non-cpp files
+# Set source files
 set(src Bernoulli.cpp
         Beta.cpp
         BetaBinomial.cpp
+        Binomial.cpp
         ChiSquared.cpp
         Empirical.cpp
         Exponential.cpp

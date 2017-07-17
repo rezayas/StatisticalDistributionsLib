@@ -252,3 +252,9 @@ ModelManifest.xml
 *.o
 a.out
 lib*.a
+
+Makefile
+CMakeCache.txt
+install_manifest.txt
+CMakeFiles/
+cmake_install.cmake
