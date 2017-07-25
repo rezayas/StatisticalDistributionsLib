@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.userosscache
+*.sln
 *.sln.docstates
 
 # User-specific files (MonoDevelop/Xamarin Studio)
@@ -258,3 +259,9 @@ CMakeCache.txt
 install_manifest.txt
 CMakeFiles/
 cmake_install.cmake
+*.prefs
+*.prefs
+/.settings/org.eclipse.cdt.managedbuilder.core.prefs
+/.settings/org.eclipse.core.resources.prefs
+/.cproject
+/.project
