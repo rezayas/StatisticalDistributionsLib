@@ -1,3 +1,6 @@
+# Get Boost math headers
+find_package(Boost REQUIRED)
+
 # Set headers
 set(header_path "${StatisticalDistributionsLib_SOURCE_DIR}/include/StatisticalDistributionsLib")
 set(header ${header_path}/Bernoulli.h
@@ -29,6 +32,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+
 # Set source files
 set(src Bernoulli.cpp
         Beta.cpp
@@ -57,6 +61,9 @@ set(src Bernoulli.cpp
 
 # Define library target
 add_library(StatisticalDistributionsLib ${header} ${src})
+
+# Include Boost headers in include search path
+include_directories(${Boost_INCLUDE_DIRS})
 
 target_include_directories(StatisticalDistributionsLib PUBLIC
   $<BUILD_INTERFACE:${StatisticalDistributionsLib_SOURCE_DIR}/include> # for headers when building
