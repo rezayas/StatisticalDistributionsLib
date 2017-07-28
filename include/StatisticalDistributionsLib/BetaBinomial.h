@@ -11,8 +11,8 @@ namespace StatisticalDistributions {
     virtual long double cdf(long value) const;
     virtual long Inverse(long double value) const;
     virtual long operator()(std::mt19937_64 &g) const;
-  private:
-    const long double alpha, beta, n;
+    const long double alpha, beta;
+    const long n
     const Beta dist;
   };
 }
