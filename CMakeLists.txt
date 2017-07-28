@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.3)
 project (StatisticalDistributionsLib)
 
+find_package(Boost REQUIRED)
+
 # Require C++14 compilation
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -19,6 +21,7 @@ set(lib_dest ${main_lib_dest}/${CMAKE_BUILD_TYPE})
 # Define options here
 
 # Add subdirectories
+include_directories(${Boost_INCLUDE_DIRS})
 add_subdirectory(src)
 # add_subdirectory(tests)
 
