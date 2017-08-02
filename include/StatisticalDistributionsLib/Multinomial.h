@@ -8,8 +8,10 @@ namespace StatisticalDistributions {
   class Multinomial : public StatisticalDistribution<array<long, N> > {
   public:
     // The weights will be normalized.
-    Multinomial(array<long double, N> weights, long trials);
-
+    inline Multinomial(const array<long double, N> &weights, long trials) {
+      init(weights, trials);
+    }
+    void init(const array<long double, N> &, long);
     // The pdf function doesn't bother to check whether the number of trials
     // is right.
     virtual long double pdf(array<long, N> x) const;
@@ -22,7 +24,7 @@ namespace StatisticalDistributions {
     virtual array<long, N> operator()(mt19937_64 &g) const;
   private:
     std::array<long double, N> ps;
-    const long trials;
+    long trials;
     mutable std::discrete_distribution<long> dist;
   };
 }

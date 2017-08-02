@@ -3,8 +3,12 @@
 namespace StatisticalDistributions {
 
   template<size_t N>
-  DirichletMultinomial<N>::DirichletMultinomial(std::array<long double, N> alphas, long trials)
+  void DirichletMultinomial<N>::init(const std::array<long double, N> &as,
+				     long ts) {
     : trials(trials), dist(alphas), alphas(alphas) {
+      trials = ts;
+      dist = Dirichlet<N>(as);
+      alphas = as;
     for(int i = 0; i < N; i++)
       talpha += alphas[i];
   }
@@ -21,8 +25,7 @@ namespace StatisticalDistributions {
   template<size_t N>
   std::array<long, N> DirichletMultinomial<N>::operator()(std::mt19937_64 &g)
   const {
-    Multinomial<N> m(dist(g), n);
-    return(m(g));
+    return(Multinomial<N>(dist(g), n)(g));
   }
 }
 

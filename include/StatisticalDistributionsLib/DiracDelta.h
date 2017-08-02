@@ -4,19 +4,24 @@
 namespace StatisticalDistributions {
   class DiracDelta : public StatisticalDistribution<long double> {
   public:
-    inline DiracDelta(long double value) : v(value) {}
+    inline DiracDelta(long double value) : pv(value) {}
+    inline init(long double value) {
+      pv = value;
+    }
     virtual long double pdf(long double value) const {
-      return(value == v? INFINITY : 0);
+      return(value == pv? INFINITY : 0);
     }
     virtual long double cdf(long double value) const {
-      return(value < v? 0 : 1);
+      return(value < pv? 0 : 1);
     }
     virtual long double Inverse(long double value) const {
-      return(v);
+      return(pv);
     }
     virtual long double operator()(std::mt19937_64 &) const {
-      return(v);
+      return(pv);
     }
-    const long double v;
+    ACCESSORC(v, pv);
+  private:
+    long double pv;
   };
 }

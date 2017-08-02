@@ -1,22 +1,23 @@
 #include "../include/StatisticalDistributionsLib/Lognormal.h"
-#include <boost/math/special_functions/erf.hpp>
-#define SQUARE(x) ((x)*(x))
 
 namespace StatisticalDistributions {
   using namespace std;
-  Lognormal::Lognormal(long double mu, long double sigma, long double shift)
+  void Lognormal::init(long double mu, long double sigma, long double shift) {
+    dist = lognormal_distribution<long double>(mu, sigma);
+    pcdist = boost::math::lognormal_distribution<long double>(mu, sigma);
+    pshift = shift;
     : dist(mu, sigma), cdist(mu, sigma), shift(shift) {}
 
   long double Lognormal::pdf(long double value) const {
-    return(boost::math::pdf(cdist, value - shift));
+    return(boost::math::pdf(pcdist, value - pshift));
   }
   long double Lognormal::cdf(long double value) const {
-    return(boost::math::cdf(cdist, value - shift));
+    return(boost::math::cdf(pcdist, value - pshift));
   }
   long double Lognormal::Inverse(long double value) const {
-    return(boost::math::quantile(cdist, value) + shift);
+    return(boost::math::quantile(pcdist, value) + pshift);
   }
   long double Lognormal::operator()(std::mt19937_64 &g) const {
-    return(this->dist(g) + shift);
+    return(this->dist(g) + pshift);
   }
 }

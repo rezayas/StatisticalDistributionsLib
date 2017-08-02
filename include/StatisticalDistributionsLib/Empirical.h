@@ -5,7 +5,11 @@
 namespace StatisticalDistributions {
   class Empirical : public StatisticalDistribution<long> {
   public:
-    Empirical(std::vector<long double> weights);
+    inline Empirical(const std::vector<long double> &weights) {
+      init(weights);
+    }
+
+    void init(const std::vector<long double> &);
     // Weights need not add to one; they will be normalized.
     virtual long double pdf(long value) const;
     virtual long double cdf(long value) const;

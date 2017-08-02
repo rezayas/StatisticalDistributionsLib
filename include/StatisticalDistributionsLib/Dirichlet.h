@@ -7,7 +7,10 @@ namespace StatisticalDistributions {
   template<size_t N>
   class Dirichlet : public StatisticalDistribution<array<long double, N> > {
   public:
-    Dirichlet(array<long double, N> alphas);
+    inline Dirichlet(const array<long double, N> &alphas) {
+      init(alphas);
+    }
+    void init(const array<long double, N> &);
     // See the Wikipedia page for the Dirichlet distribution for the meaning.
     virtual long double pdf(array<long double, N> x) const;
     virtual long double cdf(array<long double, N> x) const {
@@ -19,7 +22,7 @@ namespace StatisticalDistributions {
     virtual array<long double, N> operator()(mt19937_64 &g) const ;
   private:
     mutable long double beta;
-    const array<long double, N> alphas;
+    array<long double, N> alphas;
     mutable array<gamma_distribution<long double>, N> dists;
   };
 }

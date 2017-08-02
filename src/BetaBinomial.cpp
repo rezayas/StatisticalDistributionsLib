@@ -3,8 +3,12 @@
 #include <boost/math/special_functions/binomial.hpp>
 
 namespace StatisticalDistributions {
-  BetaBinomial::BetaBinomial(long n, long double alpha, long double beta)
-    : alpha(alpha), beta(beta), n(n), dist(alpha, beta) {}
+  void BetaBinomial::init(long n, long double alpha, long double beta) {
+    palpha = alpha;
+    pbeta = beta;
+    pn = n;
+    pdist.init(alpha, beta);
+  }
   long double BetaBinomial::pdf(long value) const {
     return(boost::math::binomial_coefficient<long double>(n, value)
 	   * boost::math::beta<long double, long double>(value + alpha,
@@ -18,8 +22,7 @@ namespace StatisticalDistributions {
     return 0; //Can't do hypergeometric functions.
   }
   long BetaBinomial::operator()(std::mt19937_64 &g) const {
-    std::binomial_distribution<long> x(n, dist(g)); //UGLY.
-    return(x(g));
+    return(std::binomial_distribution<long>(n, dist(g))(g));
   }
 }
 

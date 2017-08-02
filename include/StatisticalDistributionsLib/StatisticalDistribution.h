@@ -4,6 +4,8 @@
 #include <random>
 
 #define POLROUNDDOWN boost::math::policies::policy<boost::math::policies::discrete_quantile<boost::math::policies::integer_round_down> >
+#define ACCESSOR(x, y) inline const auto &x() const { return(y); }
+#define ACCESSORC(x, y) inline auto x() const { return(y); }
 
 namespace StatisticalDistributions {
 

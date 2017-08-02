@@ -6,13 +6,17 @@ namespace StatisticalDistributions {
   class Weibull : public StatisticalDistribution<long double> {
   public:
     // PDF proportional to x^(a-1)e^-((x/b)^a).
-    Weibull(long double a = 1, long double b = 1);
+    inline Weibull(long double a = 1, long double b = 1) {
+      init(a, b);
+    }
+    void init(long double = 1, long double = 1);
     virtual long double pdf(long double value) const;
     virtual long double cdf(long double value) const;
     virtual long double Inverse(long double value) const;
     virtual long double operator()(std::mt19937_64 &g) const;
-    const boost::math::weibull_distribution<long double> cdist;
+    ACCESSOR(cdist, pcdist);
   private:
+    boost::math::weibull_distribution<long double> pcdist;
     mutable std::weibull_distribution<long double> dist;
   };
 }

@@ -6,15 +6,23 @@ namespace StatisticalDistributions {
   class JohnsonSb : public StatisticalDistribution<long double> {
   public:
     // So that γ+δ*ln(z/(1-z)) is N(0,1), where x = σz+μ.
-    JohnsonSb(long double mu, long double sigma,
-	      long double gamma, long double delta);
+    inline JohnsonSb(long double mu, long double sigma,
+		     long double gamma, long double delta) {
+      init(mu, sigma, gamma, delta);
+    }
+    void init(long double, long double, long double, long double);
     virtual long double pdf(long double value) const;
     virtual long double cdf(long double value) const;
     virtual long double Inverse(long double value) const;
     virtual long double operator()(std::mt19937_64 &g) const;
-    const long double mu, sigma, gamma, delta;
+    ACCESSOR(cdist, pcdist);
+    ACCESSORC(mu, pmu);
+    ACCESSORC(sigma, psigma);
+    ACCESSORC(gamma, pgamma);
+    ACCESSORC(delta, pdelta);
   private:
-    const boost::math::normal_distribution<long double> cdist;
+    long double pmu, psigma, pgamma, pdelta;
+    boost::math::normal_distribution<long double> pcdist;
     mutable std::normal_distribution<long double> dist;
   };
 }

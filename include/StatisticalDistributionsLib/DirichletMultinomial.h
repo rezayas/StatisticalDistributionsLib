@@ -8,8 +8,11 @@ namespace StatisticalDistributions {
   template<size_t N>
   class DirichletMultinomial : public StatisticalDistribution<array<long, N> > {
   public:
-    DirichletMultinomial(array<long double, N> alphas, long trials);
-
+    inline DirichletMultinomial(const array<long double, N> &alphas,
+				long trials) {
+      init(alphas, trials);
+    }
+    void init(const array<long double, N> &, long);
     // The pdf function doesn't bother to check whether the number of trials
     // is right.
     virtual long double pdf(array<long, N> x) const;
@@ -21,10 +24,10 @@ namespace StatisticalDistributions {
     }
     virtual array<long, N> operator()(mt19937_64 &g) const;
   private:
-    const long trials;
+    long trials;
     long double talpha = 0;
-    const Dirichlet<N> dist;
-    const array<long double, N> alphas;
+    Dirichlet<N> dist;
+    array<long double, N> alphas;
   };
 }
 

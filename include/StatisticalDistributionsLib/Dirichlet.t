@@ -1,25 +1,27 @@
 namespace StatisticalDistributions {
 
   template<size_t N>
-  Dirichlet<N>::Dirichlet(std::array<long double, N> alphas)
-    : beta(-1), alphas(alphas) {
+  void Dirichlet<N>::init(const std::array<long double, N> &as) {
+    beta = -1;
+    alphas = as;
     for(int i = 0; i < N; i++)
       dists[i] = std::gamma_distribution<long double>(alphas[i]);
   }
   template<size_t N>
   long double Dirichlet<N>::pdf(std::array<long double, N> x) const {
     if(beta == -1) {
+      long double b = 1;
       long double asum = 0;
       for(int i = 0; i < N; i++) {
-	beta *= std::tgamma(alphas[i]);
+	b *= std::tgamma(alphas[i]);
 	asum += alphas[i];
       }
-      beta /= std::tgamma(asum);
+      beta = b / std::tgamma(asum);
     }
     long double ans = 1;
     for(int i = 0; i < N; i++)
       ans *= std::pow(x[i], alphas[i] - 1);
-    return(ans);
+    return(ans / beta);
   }
   template<size_t N>
   std::array<long double, N> Dirichlet<N>::operator()(std::mt19937_64 &g)
