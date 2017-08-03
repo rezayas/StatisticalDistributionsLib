@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/Poisson.h"
+#include "Poisson.h"
 
 namespace StatisticalDistributions {
 

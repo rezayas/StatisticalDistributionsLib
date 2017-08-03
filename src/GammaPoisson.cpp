@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/GammaPoisson.h"
+#include "GammaPoisson.h"
 
 using namespace std;
 namespace StatisticalDistributions {

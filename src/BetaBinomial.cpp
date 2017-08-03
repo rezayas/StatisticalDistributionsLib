@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/BetaBinomial.h"
+#include "BetaBinomial.h"
 #include <boost/math/special_functions/beta.hpp>
 #include <boost/math/special_functions/binomial.hpp>
 

@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/Weibull.h"
+#include "Weibull.h"
 
 namespace StatisticalDistributions {
   void Weibull::init(long double a, long double b) {

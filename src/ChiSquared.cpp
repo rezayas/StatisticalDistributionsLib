@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/ChiSquared.h"
+#include "ChiSquared.h"
 
 namespace StatisticalDistributions {
   void ChiSquared::init(long double dof) {

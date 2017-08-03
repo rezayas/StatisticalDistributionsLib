@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/Beta.h"
+#include "Beta.h"
 using namespace std;
 #define bmbdld boost::math::beta_distribution<long double>
 namespace StatisticalDistributions {

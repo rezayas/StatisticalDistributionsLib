@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/Normal.h"
+#include "Normal.h"
 
 namespace StatisticalDistributions {
   using namespace std;

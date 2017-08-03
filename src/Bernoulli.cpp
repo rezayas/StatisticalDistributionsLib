@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/Bernoulli.h"
+#include "Bernoulli.h"
 
 namespace StatisticalDistributions {
 

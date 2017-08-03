@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/NegBinomial.h"
+#include "NegBinomial.h"
 
 namespace StatisticalDistributions {
   void NegBinomial::init(long n, long double p) {

@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/Empirical.h"
+#include "Empirical.h"
 
 namespace StatisticalDistributions {
 

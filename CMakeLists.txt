@@ -1,8 +1,4 @@
 cmake_minimum_required(VERSION 3.3)
-# To force usage of default cc/c++. On mac of Eyal, these are llvm 4.0,
-# while gcc and g++ are llvm 3.7ish.
-find_program(CMAKE_C_COMPILER NAMES $ENV{CC} cc PATHS ENV PATH NO_DEFAULT_PATH)
-find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} c++ PATHS ENV PATH NO_DEFAULT_PATH)
 project (StatisticalDistributionsLib)
 
 find_package(Boost REQUIRED)

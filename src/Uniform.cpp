@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/Uniform.h"
+#include "Uniform.h"
 
 namespace StatisticalDistributions {
 

@@ -64,6 +64,8 @@ set(src Bernoulli.cpp
         UniformDiscrete.cpp
         Weibull.cpp)
 
+include_directories(${header_path})
+
 # Configure config.hpp.in
 # configure_file("config.hpp.in" "${CMAKE_CURRENT_BINARY_DIR}/config_impl.hpp")
 

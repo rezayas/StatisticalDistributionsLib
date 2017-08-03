@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/Gamma.h"
+#include "Gamma.h"
 
 using namespace std;
 namespace StatisticalDistributions {

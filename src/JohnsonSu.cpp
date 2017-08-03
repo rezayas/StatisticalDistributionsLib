@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/JohnsonSu.h"
+#include "JohnsonSu.h"
 #include <cmath>
 
 using namespace std;

@@ -1,4 +1,4 @@
-#include "../include/StatisticalDistributionsLib/Exponential.h"
+#include "Exponential.h"
 
 using namespace std;
 namespace StatisticalDistributions {
