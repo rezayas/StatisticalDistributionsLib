@@ -1,11 +1,9 @@
-#pragma once
+#ifndef STATISTICAL_DISTRIBUTION_H
+#define STATISTICAL_DISTRIBUTION_H
 #include "RNG.h"
 #include <cmath>
 #include <random>
 
-#define POLROUNDDOWN boost::math::policies::policy<boost::math::policies::discrete_quantile<boost::math::policies::integer_round_down> >
-#define ACCESSOR(x, y) inline const auto &x() const { return(y); }
-#define ACCESSORC(x, y) inline auto x() const { return(y); }
 
 namespace StatisticalDistributions {
 
@@ -21,3 +19,13 @@ namespace StatisticalDistributions {
     virtual distype operator()(std::mt19937_64 &g) const = 0;
   };
 }
+#endif
+#ifndef POLROUNDDOWN
+#define POLROUNDDOWN boost::math::policies::policy<boost::math::policies::discrete_quantile<boost::math::policies::integer_round_down> >
+#endif
+#ifndef ACCESSOR
+#define ACCESSOR(x, y) inline const auto &x() const { return(y); }
+#endif
+#ifndef ACCESSORC
+#define ACCESSORC(x, y) inline auto x() const { return(y); }
+#endif
