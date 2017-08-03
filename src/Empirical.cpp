@@ -3,7 +3,7 @@
 namespace StatisticalDistributions {
 
 
-  Empirical::init(const std::vector<long double> &weights) {
+  void Empirical::init(const std::vector<long double> &weights) {
     dist = std::discrete_distribution<long>(weights.begin(), weights.end());
     p.resize(weights.size());
     q.resize(weights.size());

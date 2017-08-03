@@ -6,7 +6,7 @@ namespace StatisticalDistributions {
   class Weibull : public StatisticalDistribution<long double> {
   public:
     // PDF proportional to x^(a-1)e^-((x/b)^a).
-    inline Weibull(long double a = 1, long double b = 1) {
+    inline Weibull(long double a = 1, long double b = 1) : pcdist(a, b) {
       init(a, b);
     }
     void init(long double = 1, long double = 1);

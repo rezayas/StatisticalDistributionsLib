@@ -6,7 +6,7 @@ namespace StatisticalDistributions {
     dist = lognormal_distribution<long double>(mu, sigma);
     pcdist = boost::math::lognormal_distribution<long double>(mu, sigma);
     pshift = shift;
-    : dist(mu, sigma), cdist(mu, sigma), shift(shift) {}
+  }
 
   long double Lognormal::pdf(long double value) const {
     return(boost::math::pdf(pcdist, value - pshift));

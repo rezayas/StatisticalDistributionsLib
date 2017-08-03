@@ -3,7 +3,7 @@
 
 using namespace std;
 namespace StatisticalDistributions {
-  void JohnsonSl::JohnsonSl(long double mu, long double sigma,
+  void JohnsonSl::init(long double mu, long double sigma,
 			    long double gamma, long double delta) {
     pmu = mu;
     psigma = sigma;

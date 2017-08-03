@@ -11,6 +11,7 @@ namespace StatisticalDistributions {
 		long double scale = 1, long double shift = 0) {
       init(alpha, beta, scale, shift);
     }
+    inline Beta() {}
     void init(long double, long double, long double = 1, long double = 0);
     static Beta mean_sdev(long double mu, long double sigma);
     inline static Beta minmax(long double alpha, long double beta,

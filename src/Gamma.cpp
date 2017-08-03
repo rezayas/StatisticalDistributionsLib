@@ -4,8 +4,8 @@ using namespace std;
 namespace StatisticalDistributions {
   void Gamma::init(long double alpha, long double beta, long double shift) {
     pshift = shift;
-    dist = gamma_distribution(alpha, beta);
-    pcdist = boost::math::gamma_distribution(alpha, beta);
+    dist = gamma_distribution<long double>(alpha, beta);
+    pcdist = boost::math::gamma_distribution<long double>(alpha, beta);
   }
 
   Gamma Gamma::mean_sdev(long double mu, long double sigma) {

@@ -7,7 +7,7 @@ namespace StatisticalDistributions {
   public:
     // Proportional to x^(α-1)e^-(x/β).
     inline Gamma(long double alpha = 1, long double beta = 1,
-		 long double shift = 0) {
+		 long double shift = 0) : pcdist(alpha, beta) {
       init(alpha, beta, shift);
     }
     void init(long double = 1, long double = 1, long double = 0);

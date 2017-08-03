@@ -6,7 +6,7 @@ namespace StatisticalDistributions {
   class Geometric : public StatisticalDistribution<long> {
   public:
     // Proportional to (1-p)^n.
-    inline Geometric(long double p = .5) {
+    inline Geometric(long double p = .5) : pcdist(p) {
       init(p);
     }
     void init(long double = .5);

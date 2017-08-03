@@ -4,7 +4,7 @@ namespace StatisticalDistributions {
 
   void Poisson::init(long double mu) {
     pcdist = boost::math::poisson_distribution<long double, POLROUNDDOWN>(mu);
-    dist = std::poisson_distribution<long double>(mu);
+    dist = std::poisson_distribution<long>(mu);
   }
   long double Poisson::pdf(long value) const {
     return(boost::math::pdf(pcdist, value));

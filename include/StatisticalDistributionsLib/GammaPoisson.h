@@ -7,7 +7,8 @@ namespace StatisticalDistributions {
   public:
     // This picks μ from Γ(α,β) (see Gamma.h),
     // then grabs from Pois(μ).
-    inline GammaPoisson(long double alpha = 1, long double beta = 1) {
+    inline GammaPoisson(long double alpha = 1, long double beta = 1)
+      : pcdist(1, 1) {
       init(alpha, beta);
     }
     void init(long double = 1, long double = 1);

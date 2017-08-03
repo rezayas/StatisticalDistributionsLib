@@ -6,7 +6,7 @@ namespace StatisticalDistributions {
   class Poisson : public StatisticalDistribution<long> {
   public:
     // μ is the expected value here.
-    void Poisson(long double mu = 1) {
+    inline Poisson(long double mu = 1) {
       init(mu);
     }
     void init(long double = 1);

@@ -10,10 +10,10 @@ namespace StatisticalDistributions {
     pdist.init(alpha, beta);
   }
   long double BetaBinomial::pdf(long value) const {
-    return(boost::math::binomial_coefficient<long double>(n, value)
-	   * boost::math::beta<long double, long double>(value + alpha,
-							 n - value + beta)
-	   / boost::math::beta<long double, long double>(alpha, beta));
+    return(boost::math::binomial_coefficient<long double>(pn, value)
+	   * boost::math::beta<long double, long double>(value + palpha,
+							 pn - value + pbeta)
+	   / boost::math::beta<long double, long double>(palpha, pbeta));
   }
   long double BetaBinomial::cdf(long value) const {
     return 0; //Can't do hypergeometric functions.
@@ -22,7 +22,7 @@ namespace StatisticalDistributions {
     return 0; //Can't do hypergeometric functions.
   }
   long BetaBinomial::operator()(std::mt19937_64 &g) const {
-    return(std::binomial_distribution<long>(n, dist(g))(g));
+    return(std::binomial_distribution<long>(pn, pdist(g))(g));
   }
 }
 

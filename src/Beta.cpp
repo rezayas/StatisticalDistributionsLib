@@ -1,5 +1,6 @@
 #include "../include/StatisticalDistributionsLib/Beta.h"
 using namespace std;
+#define bmbdld boost::math::beta_distribution<long double>
 namespace StatisticalDistributions {
   void Beta::init(long double a, long double b,
 		  long double sc, long double sh) {
@@ -12,19 +13,14 @@ namespace StatisticalDistributions {
     }
     gama = gamma_distribution<long double>(a);
     gamb = gamma_distribution<long double>(b);
-    pdist = boost::math::beta_distribution(a, b);
+    pdist = bmbdld(a, b);
     pscale = sc;
     pshift = sh;
   }
 
   Beta Beta::mean_sdev(long double mu, long double sigma) {
-    return(Beta(boost::math::beta_distribution<long double>::find_alpha(mu,
-									sigma *
-									sigma),
-		boost::math::beta_distribution<long double>::find_beta(mu,
-								       sigma *
-								       sigma));
-   
+    return(Beta(bmbdld::find_alpha(mu, sigma * sigma),
+	        bmbdld::find_beta(mu, sigma * sigma)));
   }
   
   long double Beta::pdf(long double value) const {
