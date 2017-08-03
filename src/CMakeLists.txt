@@ -8,6 +8,11 @@ set(header ${header_path}/Bernoulli.h
            ${header_path}/BetaBinomial.h
            ${header_path}/Binomial.h
            ${header_path}/ChiSquared.h
+	   ${header_path}/DiracDelta.h
+	   ${header_path}/Dirichlet.h
+	   ${header_path}/DirichletMultinomial.h
+   	   ${header_path}/Dirichlet.t
+	   ${header_path}/DirichletMultinomial.t
            ${header_path}/Empirical.h
            ${header_path}/Exponential.h
            ${header_path}/Gamma.h
@@ -16,7 +21,10 @@ set(header ${header_path}/Bernoulli.h
            ${header_path}/JohnsonSb.h
            ${header_path}/JohnsonSl.h
            ${header_path}/JohnsonSu.h
+	   ${header_path}/KroneckerDelta.h
            ${header_path}/Lognormal.h
+	   ${header_path}/Multinomial.h
+	   ${header_path}/Multinomial.t
            ${header_path}/NegBinomial.h
            ${header_path}/Normal.h
            ${header_path}/Poisson.h
