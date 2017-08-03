@@ -5,7 +5,7 @@ namespace StatisticalDistributions {
   class DiracDelta : public StatisticalDistribution<long double> {
   public:
     inline DiracDelta(long double value) : pv(value) {}
-    inline init(long double value) {
+    inline void init(long double value) {
       pv = value;
     }
     virtual long double pdf(long double value) const {

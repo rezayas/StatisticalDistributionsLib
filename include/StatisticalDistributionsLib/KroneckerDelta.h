@@ -5,7 +5,7 @@ namespace StatisticalDistributions {
   class KroneckerDelta : public StatisticalDistribution<long> {
   public:
     inline KroneckerDelta(long value) : pv(value) {}
-    inline init(long value) {
+    inline void init(long value) {
       pv = value;
     }
     virtual long double pdf(long value) const {
