@@ -4,7 +4,7 @@
 namespace StatisticalDistributions {
   class NegBinomial : public GammaPoisson {
   public:
-    // n is number of trials; p is number of successes.
+    // n is number of successes; p is probability of success
     NegBinomial(long n, long double p = .5) {
       init(n, p);
     }
