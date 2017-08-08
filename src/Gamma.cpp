@@ -9,7 +9,7 @@ namespace StatisticalDistributions {
   }
 
   Gamma Gamma::mean_sdev(long double mu, long double sigma) {
-    return(Gamma((sigma * sigma / mu), (mu * mu / (sigma * sigma))));
+    return(Gamma(mu * mu / (sigma * sigma), sigma * sigma / mu));
   }
   
   long double Gamma::pdf(long double value) const {
