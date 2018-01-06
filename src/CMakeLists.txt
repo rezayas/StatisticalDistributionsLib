@@ -8,6 +8,7 @@ set(header ${header_path}/Bernoulli.h
            ${header_path}/BetaBinomial.h
            ${header_path}/Binomial.h
            ${header_path}/ChiSquared.h
+          ${header_path}/Constant.h
 	   ${header_path}/DiracDelta.h
 	   ${header_path}/Dirichlet.h
 	   ${header_path}/DirichletMultinomial.h
@@ -33,7 +34,8 @@ set(header ${header_path}/Bernoulli.h
            ${header_path}/Uniform.h
            ${header_path}/UniformDiscrete.h
            ${header_path}/Weibull.h
-           ${header_path}/StatisticalDistribution.h)
+           ${header_path}/StatisticalDistribution.h
+           ${header_path}/GeneralStatDist.h)
 
 # Require C++14 compilation
 set(CMAKE_CXX_STANDARD 17)
@@ -47,6 +49,7 @@ set(src Bernoulli.cpp
         BetaBinomial.cpp
         Binomial.cpp
         ChiSquared.cpp
+        Constant.cpp
         Empirical.cpp
         Exponential.cpp
         Gamma.cpp

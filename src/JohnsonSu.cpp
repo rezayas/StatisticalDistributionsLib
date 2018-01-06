@@ -7,6 +7,7 @@ namespace StatisticalDistributions {
 		       long double gamma, long double delta) {
     pdelta = fabs(delta);
     psigma = fabs(sigma);
+    pgamma = gamma; //added by Christina?
     pmu = mu;
     pdelta = delta;
     dist = normal_distribution<long double>(-pgamma / pdelta, 1 / pdelta);

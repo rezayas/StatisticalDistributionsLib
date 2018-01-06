@@ -7,6 +7,7 @@
 #include <numeric>
 #include <vector>
 #include "sbar.h"
+#include "CSVImport.h"
 using namespace StatisticalDistributions;
 using namespace std;
 
@@ -80,3 +81,4 @@ void testExponential(mt19937_64 &g) {
        << ", σ² = " << (1 / lambda / lambda)
        << ")" << endl;
 }
+

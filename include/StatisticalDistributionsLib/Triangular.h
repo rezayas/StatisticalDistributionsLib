@@ -20,4 +20,5 @@ namespace StatisticalDistributions {
     boost::math::triangular_distribution<long double> pcdist;
     mutable std::piecewise_linear_distribution<long double> dist;
   };
+  
 }
