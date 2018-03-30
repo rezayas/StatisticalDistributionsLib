@@ -6,6 +6,7 @@ namespace StatisticalDistributions {
   class JohnsonSu : public StatisticalDistribution<long double> {
   public:
     // So that γ+δ*asinh((x-μ)/σ) ~ N(0,1).
+    // SciPy fit (a, b, loc, scale) corresponds to (gamma, delta, mu, sigma) 
     inline JohnsonSu(long double mu, long double sigma,
 	      long double gamma, long double delta) {
       init(mu, sigma, gamma, delta);
