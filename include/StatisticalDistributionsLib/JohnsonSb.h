@@ -6,6 +6,7 @@ namespace StatisticalDistributions {
   class JohnsonSb : public StatisticalDistribution<long double> {
   public:
     // So that γ+δ*ln(z/(1-z)) is N(0,1), where x = σz+μ.
+    // SciPy (a, b, loc, scale) corresponds to (gamma, delta, mu, sigma)  
     inline JohnsonSb(long double mu, long double sigma,
 		     long double gamma, long double delta) {
       init(mu, sigma, gamma, delta);
