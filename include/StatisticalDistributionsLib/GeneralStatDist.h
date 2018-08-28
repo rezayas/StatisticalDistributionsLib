@@ -37,6 +37,7 @@ class GeneralStatDist {
 	struct GSD_internal {
 		virtual ~GSD_internal() {}
 		virtual long double Sample(StatisticalDistributions::RNG &rng) const = 0; 
+		virtual long double pdf(long double val) const = 0; 
 	};
 
 	template<typename T> struct GSD_model: GSD_internal {
@@ -44,6 +45,8 @@ class GeneralStatDist {
 		virtual ~GSD_model() {}
 		virtual long double Sample(StatisticalDistributions::RNG &rng) const 
 		{ return object.Sample(rng);}
+		virtual long double pdf(long double val) const 
+		{ return object.pdf(val);}
 
 	private:
 		T object;
@@ -57,6 +60,9 @@ public:
 
 	long double Sample(StatisticalDistributions::RNG &rng) const
 	{return object->Sample(rng);}
+
+	long double pdf(long double val) const
+	{return object->pdf(val);}
 
 	};
 }
