@@ -4,11 +4,11 @@
 namespace StatisticalDistributions {
   class UniformDiscrete : public StatisticalDistribution<long> {
   public:
-    // Uniform on low <= i < high
+    // Uniform on low <= i <= high
     inline UniformDiscrete(long low, long high) {
       init(low, high);
     }
-    // Uniform on 0 <= i < n
+    // Uniform on 0 <= i <= n
     inline UniformDiscrete(long n) {
       init(0, n);
     }
